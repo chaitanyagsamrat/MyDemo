@@ -1,0 +1,205 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<PortalPatientModel>
+
+@using GlobalPortal.Api.Models.PortalPatients
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.PortalPatients
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+
+    var firstName = Model.Criteria["FirstName"];
+    var lastName = Model.Criteria["LastName"];
+    var criteriaID = Model.Criteria["CriteriaID"];
+
+    string emailAddress = string.Empty;
+    if (Model.Data.Contact.EmailAddresses.Count > 0)
+    {
+        var defaultEmailAddress = Model.Data.Contact.EmailAddresses.Where(e => e.Default == true).FirstOrDefault();
+        emailAddress = defaultEmailAddress != null ? defaultEmailAddress.Address : Model.Data.Contact.EmailAddresses.FirstOrDefault().Address;
+    }
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+            {
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+}
+<div class="col-xs-12" style="padding-left:0px; padding-right:0">
+    <div class="panel panel-default">
+        <div class="panel-heading">@Resources.SearchResults</div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Index", "PortalPatients", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">@IndexResources.FirstName</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="id" name="firstName" value="@firstName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-2 control-label">@IndexResources.LastName</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="@lastName">                        
+                    </div>
+                    <button class="btn btn-primary" type="submit">@Resources.Search</button>
+                </div>
+            }
+            <br />
+            <div class="table-responsive" style="padding-right:0px;">
+                <table class="table table-bordered table-striped">
+                    <colgroup>
+                        <col class="col-xs-4">
+                        <col class="col-xs-2">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="font-size-13">@Resources.ID</th>
+                            <th class="font-size-13">@IndexResources.FirstName</th>
+                            <th class="font-size-13">@IndexResources.LastName</th>
+                            <th class="font-size-13">@IndexResources.Gender </th>
+                            <th class="font-size-13">@IndexResources.DateOfBirth</th>
+                            <th class="font-size-13">@IndexResources.EmailAddress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.SearchResults.Rows)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.Contact.FirstName</td>
+                                <td>@item.Contact.LastName</td>
+                                <td>@item.Gender</td>
+                                <td>@item.DateOfBirth.ToShortDateString()</td>
+                                <td>
+                                    @foreach (var address in item.Contact.EmailAddresses)
+                                    {
+                                        @address.Address
+                                        <br />
+                                    }
+                                </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Get", "PortalPatients", FormMethod.Get, new { @class = "form-horizontal" }))
+        {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="id" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="id" name="id" value="@criteriaID" placeholder="@Resources.Search">
+                </div>
+                <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+            </div>
+            <div class="row col-sm-12 visible-xs">
+                <button class="btn btn-primary">@Resources.GetData</button>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ID.Equals(Guid.Empty))
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFirstName" class="col-sm-2 control-label">@IndexResources.FirstName</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultFirstName", null, new { @class = "form-control", disabled = "disabled", id = "resultFirstName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLastName" class="col-sm-2 control-label">@IndexResources.LastName</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultLastName", null, new { @class = "form-control", disabled = "disabled", id = "resultLastName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultGender" class="col-sm-2 control-label">@IndexResources.Gender</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultGender", null, new { @class = "form-control", disabled = "disabled", id = "resultGender" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDateOfBirth" class="col-sm-2 control-label">@IndexResources.DateOfBirth</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultDateOfBirth", null, new { @class = "form-control", disabled = "disabled", id = "resultDateOfBirth" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultAddress" class="col-sm-2 control-label">@IndexResources.EmailAddress</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultAddress", emailAddress, new { @class = "form-control", disabled = "disabled", id = "resultAddress" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ID, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFirstName" class="col-sm-2 control-label">@IndexResources.FirstName</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Contact.FirstName, null, new { @class = "form-control", disabled = "disabled", id = "resultFirstName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLastName" class="col-sm-2 control-label">@IndexResources.LastName</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Contact.LastName, null, new { @class = "form-control", disabled = "disabled", id = "resultLastName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultGender" class="col-sm-2 control-label">@IndexResources.Gender</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Gender, null, new { @class = "form-control", disabled = "disabled", id = "resultGender" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDateOfBirth" class="col-sm-2 control-label">@IndexResources.DateOfBirth</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.DateOfBirth, null, new { @class = "form-control", disabled = "disabled", id = "resultDateOfBirth" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultAddress" class="col-sm-2 control-label">@IndexResources.EmailAddress</label>
+                <div class="col-sm-8">
+                      @Html.TextBox("resultAddress", emailAddress, new { @class = "form-control", disabled = "disabled", id = "resultAddress" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

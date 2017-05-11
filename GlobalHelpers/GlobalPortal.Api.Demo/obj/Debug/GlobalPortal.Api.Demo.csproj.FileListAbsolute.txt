@@ -1,0 +1,309 @@
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\csc.exe
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\System.Collections.Immutable.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\System.Reflection.Metadata.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\vbc.exe
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\VBCSCompiler.exe
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\roslyn\VBCSCompiler.exe.config
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.dll.config
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\Antlr3.Runtime.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Client.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\Microsoft.Web.Infrastructure.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\Newtonsoft.Json.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Helpers.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Mvc.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Optimization.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Razor.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Deployment.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.WebPages.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Razor.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\WebGrease.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Net.Http.Formatting.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Client.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\Newtonsoft.Json.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Helpers.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Mvc.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Optimization.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.Razor.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.WebPages.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Deployment.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Razor.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\Antlr3.Runtime.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\System.Net.Http.Formatting.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.csprojResolveAssemblyReference.cache
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Controllers.AppointmentRequestReasonsSentResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Properties.Resources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AccountSettings.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Accounts.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Allergies.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ApplyRequestResults.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentAllowedTimeInAdvance.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentCancelRequests.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequestReasonsSent.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequestReasons.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequests.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentStatuses.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Appointments.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ClosedForms.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.DoctorAvailabilitySlots.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Doctors.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.DosageForms.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ExamFieldMappingDetails.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ExamFieldMappings.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Exams.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyHistories.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyMembers.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyRelationships.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Forms.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.HealthReviews.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Hl7CDAs.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Home.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Home.ServicesResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Insurances.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Locations.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.MarkAsReceived.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.MeaningfulUses.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Medications.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OneOffMessages.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OpenForms.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OrderStatus.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Orders.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PatientCommunications.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PatientRelationships.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Patients.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PortalPatients.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PortalPatientUpdates.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Prefixes.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.RecallReasons.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Referrals.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ServiceTypeDurations.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Shared._LayoutResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.SocialHistoryAlcohols.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.SocialHistoryDrugs.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Suffixes.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Surgeries.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesAppointments.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesOrders.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesPatients.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Users.IndexResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.csproj.GenerateResource.Cache
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\csc.exe
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\System.Collections.Immutable.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\System.Reflection.Metadata.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\vbc.exe
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\VBCSCompiler.exe
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\roslyn\VBCSCompiler.exe.config
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.dll.config
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.pdb
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\Antlr3.Runtime.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Client.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\Microsoft.Web.Infrastructure.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\Newtonsoft.Json.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Helpers.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Mvc.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Optimization.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Razor.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Deployment.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.WebPages.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Razor.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\WebGrease.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Net.Http.Formatting.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Client.pdb
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.pdb
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\Newtonsoft.Json.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Helpers.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Mvc.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Optimization.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.Razor.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.WebPages.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Deployment.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Razor.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\Antlr3.Runtime.pdb
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\bin\System.Net.Http.Formatting.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.csprojResolveAssemblyReference.cache
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Controllers.AppointmentRequestReasonsSentResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Properties.Resources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AccountSettings.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Accounts.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Allergies.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ApplyRequestResults.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentAllowedTimeInAdvance.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentCancelRequests.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequestReasonsSent.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequestReasons.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequests.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentStatuses.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Appointments.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ClosedForms.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.DoctorAvailabilitySlots.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Doctors.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.DosageForms.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ExamFieldMappingDetails.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ExamFieldMappings.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Exams.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyHistories.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyMembers.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyRelationships.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Forms.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.HealthReviews.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Hl7CDAs.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Home.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Home.ServicesResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Insurances.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Locations.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.MarkAsReceived.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.MeaningfulUses.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Medications.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OneOffMessages.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OpenForms.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OrderStatus.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Orders.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PatientCommunications.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PatientRelationships.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Patients.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PortalPatients.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PortalPatientUpdates.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Prefixes.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.RecallReasons.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Referrals.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ServiceTypeDurations.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Shared._LayoutResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.SocialHistoryAlcohols.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.SocialHistoryDrugs.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Suffixes.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Surgeries.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesAppointments.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesOrders.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesPatients.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Users.IndexResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.csproj.GenerateResource.Cache
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\csc.exe
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\System.Collections.Immutable.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\System.Reflection.Metadata.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\vbc.exe
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\VBCSCompiler.exe
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\roslyn\VBCSCompiler.exe.config
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.dll.config
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Demo.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\Antlr3.Runtime.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Client.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\Microsoft.Web.Infrastructure.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\Newtonsoft.Json.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Helpers.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Mvc.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Optimization.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Razor.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Deployment.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.WebPages.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Razor.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\WebGrease.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Net.Http.Formatting.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Client.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\GlobalPortal.Api.Models.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\Newtonsoft.Json.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Helpers.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Mvc.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Optimization.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.Razor.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.WebPages.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Deployment.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Web.WebPages.Razor.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\Antlr3.Runtime.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\bin\System.Net.Http.Formatting.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.csprojResolveAssemblyReference.cache
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Controllers.AppointmentRequestReasonsSentResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Properties.Resources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AccountSettings.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Accounts.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Allergies.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ApplyRequestResults.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentAllowedTimeInAdvance.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentCancelRequests.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequestReasonsSent.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequestReasons.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentRequests.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.AppointmentStatuses.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Appointments.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ClosedForms.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.DoctorAvailabilitySlots.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Doctors.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.DosageForms.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ExamFieldMappingDetails.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ExamFieldMappings.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Exams.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyHistories.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyMembers.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.FamilyRelationships.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Forms.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.HealthReviews.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Hl7CDAs.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Home.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Home.ServicesResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Insurances.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Locations.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.MarkAsReceived.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.MeaningfulUses.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Medications.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OneOffMessages.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OpenForms.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.OrderStatus.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Orders.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PatientCommunications.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PatientRelationships.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Patients.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PortalPatients.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.PortalPatientUpdates.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Prefixes.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.RecallReasons.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Referrals.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.ServiceTypeDurations.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Shared._LayoutResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.SocialHistoryAlcohols.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.SocialHistoryDrugs.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Suffixes.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Surgeries.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesAppointments.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesOrders.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.CommunicationUpdatesPatients.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.Views.Users.IndexResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.csproj.GenerateResource.Cache
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Demo\obj\Debug\GlobalPortal.Api.Demo.pdb

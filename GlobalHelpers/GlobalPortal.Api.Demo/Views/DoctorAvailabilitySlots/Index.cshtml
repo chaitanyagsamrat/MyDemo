@@ -1,0 +1,196 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<DoctorAvailabilitySlotModel>
+
+@using GlobalPortal.Api.Demo.Views.DoctorAvailabilitySlots
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Models.DoctorAvailabilitySlots
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+	ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (!string.IsNullOrWhiteSpace(Model.ResultMessage))
+{
+	<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+	<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+	<div class="panel-heading">@Resources.ResultsHeader</div>
+	<div class="panel-body">
+		@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+		{
+			<div class="row form-group">
+				<label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultLocationId" class="col-sm-2 control-label">@IndexResources.LocationId</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultLocationId", null, new { @class = "form-control", disabled = "disabled", id = "resultLocationId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultDoctorId" class="col-sm-2 control-label">@IndexResources.DoctorId</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultDoctorId", null, new { @class = "form-control", disabled = "disabled", id = "resultDoctorId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultStart" class="col-sm-2 control-label">@IndexResources.Start</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultStart", null, new { @class = "form-control", disabled = "disabled", id = "resultStart" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultEnd" class="col-sm-2 control-label">@IndexResources.End</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultEnd", null, new { @class = "form-control", disabled = "disabled", id = "resultEnd" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultAvailable" class="col-sm-2 control-label">@IndexResources.ResultAvailable</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultAvailable", null, new { @class = "form-control", disabled = "disabled", id = "resultAvailable" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultNotes" class="col-sm-2 control-label">@IndexResources.Notes</label>
+				<div class="col-sm-8">
+					@Html.TextArea("resultNotes", null, new { @class = "form-control", disabled = "disabled", id = "resultNotes" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultAppointmentRequestReasonId" class="col-sm-2 control-label">@IndexResources.ResultAppointmentRequestReasonId</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultAppointmentRequestReasonId", null, new { @class = "form-control", disabled = "disabled", id = "resultAppointmentRequestReasonId" })
+				</div>
+			</div>
+		}
+		else
+		{
+			<div class="row form-group">
+				<label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultLocationId" class="col-sm-2 control-label">@IndexResources.LocationId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultLocationId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultDoctorId" class="col-sm-2 control-label">@IndexResources.DoctorId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.DoctorExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultDoctorId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultStart" class="col-sm-2 control-label">@IndexResources.Start</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.DoctorAvailabilityDates[0].Start, null, new { @class = "form-control", disabled = "disabled", id = "resultEnd" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultEnd" class="col-sm-2 control-label">@IndexResources.End</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.DoctorAvailabilityDates[0].End, null, new { @class = "form-control", disabled = "disabled", id = "resultEnd" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultAvailable " class="col-sm-2 control-label">@IndexResources.ResultAvailable</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultAvailable", Model.Data.Available ? Resources.Yes : Resources.No, new { @class = "form-control", disabled = "disabled", id = "resultInhouse" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultNotes" class="col-sm-2 control-label">@IndexResources.Notes</label>
+				<div class="col-sm-8">
+					@Html.TextAreaFor(m => m.Data.Notes, new { @class = "form-control", disabled = "disabled", id = "resultNotes" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultAppointmentRequestReasonId" class="col-sm-2 control-label">@IndexResources.ResultAppointmentRequestReasonId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AppointmentRequestReasonId, null, new { @class = "form-control", disabled = "disabled", id = "resultAppointmentRequestReasonId" })
+				</div>
+			</div>
+			<div class="row col-sm-12">
+				@using (Html.BeginForm("Delete", "DoctorAvailabilitySlots", FormMethod.Post))
+				{
+					<input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+					<button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+				}
+			</div>
+		}
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">@Resources.AddHeader</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("Send", "DoctorAvailabilitySlots", FormMethod.Post, new { @class = "form-horizontal" }))
+			{
+			@Html.ValidationSummary(true)
+			<div class="form-group">
+				<label for="Data_ExternalId" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_LocationExternalId" class="col-sm-2 control-label">@IndexResources.LocationId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_DoctorExternalId" class="col-sm-2 control-label">@IndexResources.DoctorId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.DoctorExternalId, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_Start" class="col-sm-2 control-label">@IndexResources.Start</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.DoctorAvailabilityDates[0].Start, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_End" class="col-sm-2 control-label">@IndexResources.End</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.DoctorAvailabilityDates[0].End, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_Available" class="col-sm-2 control-label">@IndexResources.Available</label>
+				<div class="col-sm-8">
+					@Html.CheckBoxFor(m => m.Data.Available)
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_Notes" class="col-sm-2 control-label">@IndexResources.Notes</label>
+				<div class="col-sm-8">
+					@Html.TextAreaFor(m => m.Data.Notes, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_AppointmentRequestReasonId" class="col-sm-2 control-label">@IndexResources.ResultAppointmentRequestReasonId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AppointmentRequestReasonId, null, new { @class = "form-control" })
+				</div>
+			</div>
+
+			<button class="btn btn-primary">@Resources.SendData</button>
+		}
+	</div>
+</div>

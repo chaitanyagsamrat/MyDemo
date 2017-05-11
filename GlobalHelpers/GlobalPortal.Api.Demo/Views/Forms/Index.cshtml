@@ -1,0 +1,109 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<FormModel>
+
+@using GlobalPortal.Api.Models.Forms
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.Forms
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+
+    var formStatus = Model.Criteria["FormStatus"];
+    var patientId = Model.Criteria["PatientId"];
+    var utcCreationDate1 = Model.Criteria["UtcCreationDate1"];
+    var utcCreationDate2 = Model.Criteria["UtcCreationDate2"];
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+}
+
+<div class="col-xs-10" style="padding-left:0;">
+    <div class="panel panel-default">
+        <div class="panel-heading">@Resources.SearchResults</div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Index", "Forms", FormMethod.Get, new { @class = "form-group" }))
+            {
+                <div class="form-group">
+                    <label for="patientId">@IndexResources.PatientExternalID</label>
+                    <input type="text" name="patientId" id="patientId" value="@patientId" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>@IndexResources.DateCreated</label>
+                    <br />
+                    <div class="col-xs-5 no-padding-left">
+                        <input type="datetime" class="form-control" name="utcCreationDate1" value=@(DateTime.MinValue.ToString()==utcCreationDate1?"mm/dd/yyyy":utcCreationDate1)>
+                    </div>
+                    <div class="col-xs-2 col-sm-1 margin-top-3">
+                        @IndexResources.And
+                    </div>
+                    <div class="col-xs-5 no-padding-left">
+                        <input type="datetime" class="form-control" name="utcCreationDate2" value=@(DateTime.MaxValue.ToString()==utcCreationDate2?"mm/dd/yyyy":utcCreationDate2)>
+                    </div>
+                </div>
+
+                <div class="form-group margin-top-10">
+                    <label for="formStatus">@IndexResources.SearchByFormStatus</label>
+                    <select name="formStatus" class="form-control">
+                        <option value="" @(String.IsNullOrEmpty(formStatus) ? "selected" : "")>@IndexResources.Select</option>
+                        <option value="@IndexResources.Open" @(formStatus == IndexResources.Open ? "selected" : "")>@IndexResources.Open</option>
+                        <option value="@IndexResources.Completed" @(formStatus == IndexResources.Completed ? "selected" : "")>@IndexResources.Completed</option>
+                        <option value="@IndexResources.Closed" @(formStatus == IndexResources.Closed ? "selected" : "")>@IndexResources.Closed</option>
+                        <option value="@IndexResources.Cancelled" @(formStatus == IndexResources.Cancelled ? "selected" : "")>@IndexResources.Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="form-group ">
+                    <button class="btn btn-primary" type="submit">@Resources.Search</button>
+                </div>
+            }
+            <br />
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <colgroup>
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="font-size-13">@Resources.ID</th>
+                            <th class="font-size-13">@IndexResources.FormLayoutName</th>
+                            <th class="font-size-13">@IndexResources.PatientExternalID</th>
+                            <th class="font-size-13">@IndexResources.PatientFullName</th>
+                            <th class="font-size-13">@IndexResources.Status</th>
+                            <th class="font-size-13">@IndexResources.DateCreated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.SearchResults.Rows)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.FormLayoutName</td>
+                                <td>@item.PatientExternalId</td>
+                                <td>@item.PatientFullName</td>
+                                <td>@item.Status</td>
+                                <td>@item.CreationDate.ToShortDateString()</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

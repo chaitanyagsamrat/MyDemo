@@ -1,0 +1,97 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<OrderUpdateModel>
+
+@using GlobalPortal.Api.Models.OrderUpdates
+@using GlobalPortal.Api.Demo.Views.CommunicationUpdatesOrders
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+
+    var orderExternalID = Model.Criteria["OrderExternalID"];
+    var method = Model.Criteria["Method"];
+    var alreadysent = Model.Criteria["AlreadySent"];
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+            {
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+}
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+    <div class="panel-body">
+		@using (Html.BeginForm("Index", "CommunicationUpdatesOrders", FormMethod.Get, new { @class = "form-group" }))
+        {
+			<div class="form-group">
+				<label for="alreadysent">@IndexResources.AlreadySent</label>
+				<br />
+				<div class="no-padding-left">
+					<select name="alreadysent" class="form-control">
+						<option value="" @(String.IsNullOrEmpty(alreadysent) ? "selected" : "")>@IndexResources.All</option>
+						<option value="true" @(alreadysent == "True" ? "selected" : "")>@Resources.Yes</option>
+						<option value="false" @(alreadysent == "False" ? "selected" : "")>@Resources.No</option>
+					</select>
+				</div>
+			</div>
+            <div class="form-group">
+                <label for="method">@IndexResources.CommunicationMehod</label>
+                <br />
+                <div class="no-padding-left">
+                    <select name="method" class="form-control">
+                        <option value="" @(String.IsNullOrEmpty(method) ? "selected" : "")>@IndexResources.All</option>
+                        <option value="Email" @(method == "Email" ? "selected" : "")>@IndexResources.Email</option>
+                        <option value="Sms" @(method == "Sms" ? "selected" : "")>@IndexResources.SMS</option>
+                        <option value="Voice" @(method == "Voice" ? "selected" : "")>@IndexResources.Voice</option>
+                    </select>
+                </div>
+            </div>
+			<div class="form-group">
+				<label for="orderExternalID">@IndexResources.OrderExternalID</label>
+				<input type="text" name="orderExternalID" id="orderExternalID" value="@orderExternalID" class="form-control" />
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">@Resources.Search</button>
+			</div>
+		}
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-4">
+                    <col class="col-xs-4">
+					<col class="col-xs-4">
+                </colgroup>
+                <thead>
+                    <tr>
+						<th class="font-size-13">@IndexResources.OrderUpdateID</th>
+                        <th class="font-size-13">@IndexResources.OrderExternalID</th>
+                        <th class="font-size-13">@IndexResources.CommunicationMehod</th>
+                        <th class="font-size-13">@IndexResources.UpdateStatusTo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+							<td>@item.OrderUpdateID</td>
+                            <td>@item.OrderExternalID</td>
+                            <td>@(item.Method)</td>
+                            <td>@item.UpdateStatusTo</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

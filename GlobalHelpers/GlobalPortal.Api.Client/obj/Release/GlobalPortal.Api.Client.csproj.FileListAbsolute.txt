@@ -1,0 +1,16 @@
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\GlobalPortal.Api.Client.dll.config
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\GlobalPortal.Api.Client.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\GlobalPortal.Api.Client.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\GlobalPortal.Api.Models.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\Newtonsoft.Json.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\System.Net.Http.Formatting.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\Newtonsoft.Json.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\System.Net.Http.Formatting.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Release\GlobalPortal.Api.Client.csprojResolveAssemblyReference.cache
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Release\GlobalPortal.Api.Client.ClientAuthentication.RestClientAuthenticatorResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Release\GlobalPortal.Api.Client.GenericObject.ApiClientGenericObjectResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Release\GlobalPortal.Api.Client.csproj.GenerateResource.Cache
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Release\GlobalPortal.Api.Client.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Release\GlobalPortal.Api.Client.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\GlobalPortal.Api.Models.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Release\GlobalPortal.Api.Models.xml

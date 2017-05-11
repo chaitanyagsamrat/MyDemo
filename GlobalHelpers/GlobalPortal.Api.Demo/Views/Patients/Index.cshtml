@@ -1,0 +1,258 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<PatientModel>
+
+@using GlobalPortal.Api.Models.Patients
+
+@using GlobalPortal.Api.Demo.Views.Patients
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+
+    var active = Model.Criteria["Active"];
+    var fullName = Model.Criteria["FullName"];
+    var birthday = Model.Criteria["Birthday"];
+
+    string locationNumber = string.Empty;
+    if (Model.Data.Locations.Count > 0)
+    {
+        locationNumber = Model.Data.Locations.FirstOrDefault();
+    }
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Index", "Patients", FormMethod.Get, new { @class = "form-group" }))
+        {
+            <div class="form-group">
+                <label for="fullName">@IndexResources.FullName</label>
+                <input type="text" name="fullName" id="fullName" value="@fullName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>@IndexResources.Birthday</label>
+                <input type="datetime" class="form-control" name="birthday" value=@birthday>
+            </div>
+            <div class="form-group">
+                <label for="active">@IndexResources.Active</label>
+                <div class="no-padding-left">
+                    <select name="active" class="form-control">
+                        <option value="" @(String.IsNullOrEmpty(active) ? "selected" : "")>@IndexResources.All</option>
+                        <option value="true" @(active == "True" ? "selected" : "")>@Resources.Yes</option>
+                        <option value="false" @(active == "False" ? "selected" : "")>@Resources.No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">@Resources.Search</button>
+            </div>
+        }
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>@Resources.ID</th>
+                        <th>@IndexResources.FirstName</th>
+                        <th>@IndexResources.LastName</th>
+                        <th>@IndexResources.Birthday</th>
+                        <th>@IndexResources.PhoneNumber</th>
+                        <th>@IndexResources.Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+                            <td>@item.ExternalId</td>
+                            <td>@item.Contact.FirstName</td>
+                            <td>@item.Contact.LastName</td>
+                            <td>@item.Birthday</td>
+                            <td>
+                                @{string itemPhoneNumber = string.Empty;}
+                                @if (item.Contact.PhoneNumbers.Count > 0)
+                                {
+                                    var itemDefaultPhoneNumber = item.Contact.PhoneNumbers.Where(e => e.Default == true).FirstOrDefault();
+                                    itemPhoneNumber = itemDefaultPhoneNumber != null ? itemDefaultPhoneNumber.Number : item.Contact.PhoneNumbers.FirstOrDefault().Number;
+                                }
+                                @itemPhoneNumber
+                            </td>
+                            <td>@(item.Active ? Resources.Yes : Resources.No)</td>
+                        </tr>
+                     }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Get", "Patients", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <label for="criteriaID" class="col-sm-4 control-label">@Resources.ID</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="criteriaID" name="criteriaID" placeholder="@Resources.Search">
+                </div>
+                <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+            </div>
+            <div class="row col-sm-12 visible-xs">
+                <button class="btn btn-primary">@Resources.GetData</button>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+            {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-9">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFirstName" class="col-sm-3 control-label">@IndexResources.FirstName</label>
+                <div class="col-sm-9">
+                    @Html.TextBox("resultFirstName", null, new { @class = "form-control", disabled = "disabled", id = "resultFirstName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLastName" class="col-sm-3 control-label">@IndexResources.LastName</label>
+                <div class="col-sm-9">
+                    @Html.TextBox("resultLastName", null, new { @class = "form-control", disabled = "disabled", id = "resultLastName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultBirthday" class="col-sm-3 control-label">@IndexResources.Birthday</label>
+                <div class="col-sm-9">
+                    @Html.TextBox("resultBirthday", null, new { @class = "form-control", disabled = "disabled", id = "resultBirthday" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultActive" class="col-sm-3 control-label">@IndexResources.Active</label>
+                <div class="col-sm-9">
+                    @Html.TextBox("resultActive", null, new { @class = "form-control", disabled = "disabled", id = "resultActive" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFirstName" class="col-sm-3 control-label">@IndexResources.FirstName</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.Contact.FirstName, null, new { @class = "form-control", disabled = "disabled", id = "resultFirstName" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultLastName" class="col-sm-3 control-label">@IndexResources.LastName</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.Contact.LastName, null, new { @class = "form-control", disabled = "disabled", id = "resultLastName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultBirthday" class="col-sm-3 control-label">@IndexResources.Birthday</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.Birthday, null, new { @class = "form-control", disabled = "disabled", id = "resultBirthday" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultActive" class="col-sm-3 control-label">@IndexResources.Active</label>
+                <div class="col-sm-9">
+                    @Html.TextBox("resultActive", Model.Data.Active ? Resources.Yes : Resources.No, new { @class = "form-control", disabled = "disabled", id = "resultActive" })
+                </div>
+            </div>
+            <div class="row col-sm-12">
+                @using (Html.BeginForm("Delete", "Patients", FormMethod.Post))
+                {
+                    <input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+                    <button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "Patients", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Contact_FirstName" class="col-sm-3 control-label">@IndexResources.FirstName</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.Contact.FirstName, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Contact_LastName" class="col-sm-3 control-label">@IndexResources.LastName</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.Contact.LastName, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Birthday" class="col-sm-3 control-label">@IndexResources.Birthday</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Data.Birthday, new { Value = Model.Data.Birthday, @class = "form-control", @type = "datetime?" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Active" class="col-sm-3 control-label">@IndexResources.Active</label>
+                <div class="col-sm-9">
+                    @Html.CheckBoxFor(m => m.Data.Active)
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Locations" class="col-sm-3 control-label">@IndexResources.LocationsId</label>
+                <div class="col-sm-9">
+                    <input name="Data.Locations[0]" class="form-control"  id="Data_Locations" value="@locationNumber"/>
+                </div>
+            </div>
+            <button class="btn btn-primary">@Resources.SendData</button>
+        }
+    </div>
+</div>
+

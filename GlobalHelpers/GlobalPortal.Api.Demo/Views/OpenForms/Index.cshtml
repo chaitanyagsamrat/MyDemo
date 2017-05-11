@@ -1,0 +1,151 @@
+﻿ @model GlobalPortal.Api.Demo.Models.GenericModel<OpenFormModel>
+
+	@using GlobalPortal.Api.Models.Forms
+	@using GlobalPortal.Api.Demo.Models
+	@using GlobalPortal.Api.Demo.Views.OpenForms
+	@using GlobalPortal.Api.Demo.Properties
+
+	@{
+	ViewBag.Title = IndexResources.PageTitle;
+	var stringId = Model.Data.ID != Guid.Empty ? Model.Data.ID.ToString() : string.Empty;
+	}
+
+	<h2>@IndexResources.MainHeader</h2>
+	@if (!string.IsNullOrWhiteSpace(Model.ResultMessage))
+	{
+	<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+	}
+	@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+	{
+	<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+	}
+
+	<div class="panel panel-default">
+		<div class="panel-heading">@Resources.GetHeader</div>
+		<div class="panel-body">
+			@using (Html.BeginForm("Get", "OpenForms", FormMethod.Get, new { @class = "form-horizontal" }))
+			{
+			@Html.ValidationSummary(true)
+
+			<div class="form-group">
+				<label for="Data_ID" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					<input id="Data_ID" name="id" class="form-control" type="text" value="@stringId" placeholder="@Resources.Search" />
+				</div>
+				<button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+			</div>
+			<div class="row col-sm-12 visible-xs">
+				<button class="btn btn-primary">@Resources.GetData</button>
+			</div>
+			}
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">@Resources.ResultsHeader</div>
+		<div class="panel-body">
+			@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ID == Guid.Empty)
+			{
+			<div class="row form-group">
+				<label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultPatientFullName" class="col-sm-2 control-label">@IndexResources.PatientFullName</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultPatientFullName", null, new { @class = "form-control", disabled = "disabled", id = "resultPatientFullName" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultPatientExternalId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultPatientExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultFormLayoutName" class="col-sm-2 control-label">@IndexResources.FormLayoutName</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultFormLayoutName", null, new { @class = "form-control", disabled = "disabled", id = "resultFormLayoutName" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultCreationDate" class="col-sm-2 control-label">@IndexResources.CreationDate</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultCreationDate", null, new { @class = "form-control", disabled = "disabled", id = "resultCreationDate" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultStatus" class="col-sm-2 control-label">@IndexResources.Status</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultStatus", null, new { @class = "form-control", disabled = "disabled", id = "resultStatus" })
+				</div>
+			</div>
+			}
+			else
+			{
+			<div class="row form-group">
+				<label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.ID, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultPatientFullName" class="col-sm-2 control-label">@IndexResources.PatientFullName</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.PatientFullName, null, new { @class = "form-control", disabled = "disabled", id = "resultPatientFullName" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultPatientExternalId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultLastName" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultFormLayoutName" class="col-sm-2 control-label">@IndexResources.FormLayoutName</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.FormLayoutName, null, new { @class = "form-control", disabled = "disabled", id = "resultFormLayoutName" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultCreationDate" class="col-sm-2 control-label">@IndexResources.CreationDate</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.CreationDate, null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultStatus" class="col-sm-2 control-label">@IndexResources.Status</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.Status, null, new { @class = "form-control", disabled = "disabled", id = "resultStatus" })
+				</div>
+			</div>
+			}
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">@IndexResources.CloseForm</div>
+		<div class="panel-body">
+			@using (Html.BeginForm("Send", "OpenForms", FormMethod.Post, new { @class = "form-horizontal" }))
+			{
+			@Html.ValidationSummary(true)
+			<div class="form-group">
+				<label for="OpenFormID" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.ID, null, new { @class = "form-control", id = "OpenFormID", name="id" })
+				</div>
+				@Html.HiddenFor(m=>m.Data.CreationDate)
+				@Html.HiddenFor(m => m.Data.FormLayoutName)
+				@Html.HiddenFor(m => m.Data.PatientExternalId)
+				@Html.HiddenFor(m => m.Data.PatientFullName)
+				@Html.HiddenFor(m => m.Data.Status)
+			</div>
+			<div class="form-group col-sm-12">
+				<button class="btn btn-primary" type="submit">@IndexResources.SendData</button>
+			</div>
+			}
+		</div>
+	</div>
+

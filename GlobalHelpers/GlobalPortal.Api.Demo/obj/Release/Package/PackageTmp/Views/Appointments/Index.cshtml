@@ -1,0 +1,302 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<AppointmentModel>
+
+@using GlobalPortal.Api.Models.AppointmentsModel
+@using GlobalPortal.Api.Demo.Properties
+@using GlobalPortal.Api.Demo.Views.Appointments
+
+@{
+    ViewBag.Title = @IndexResources.PageTitle;
+    var start1 = Model.Criteria["Start1"];
+    var start2 = Model.Criteria["Start2"];
+    var portalCreated1 = Model.Criteria["PortalCreated1"];
+    var portalCreated2 = Model.Criteria["PortalCreated2"];
+
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Index", "Appointments", FormMethod.Get, new { @class = "form-inline form-group" }))
+        {
+
+            <div class="form-group">
+                <label>@IndexResources.DateCreated</label>
+                <br />
+                <div class="col-xs-5 no-padding-left">
+                    <input type="datetime" class="form-control" name="start1" value=@(DateTime.MinValue.ToString()== start1 ? "mm/dd/yyyy": start1)>
+                </div>
+                <div class="col-xs-2 col-sm-2 margin-top-3">
+                    @IndexResources.And
+                </div>
+                <div class="col-xs-5 no-padding-left">
+                    <input type="datetime" class="form-control" name="start2" value=@(DateTime.MaxValue.ToString()== start2 ? "mm/dd/yyyy": start2)>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <label>@IndexResources.DatePortalCreated</label>
+                <br />
+                <div class="col-xs-5 no-padding-left">
+                    <input type="datetime" class="form-control" name="portalCreated1" value=@(DateTime.MinValue.ToString()== portalCreated1 ? "mm/dd/yyyy": portalCreated1)>
+                </div>
+                <div class="col-xs-2 col-sm-2 margin-top-3">
+                    @IndexResources.And
+                </div>
+                <div class="col-xs-5 no-padding-left">
+                    <input type="datetime" class="form-control" name="portalCreated2" value=@(DateTime.MaxValue.ToString()== portalCreated2 ? "mm/dd/yyyy": portalCreated2)>
+                </div>
+            </div>
+
+            <div class="form-group margin-top-10">
+                <button class="btn btn-primary" type="submit">@Resources.Search</button>
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+        {
+            <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+        }
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>@Resources.ID</th>
+                        <th>@IndexResources.AppointmentStatusExternalId</th>
+                        <th>@IndexResources.Start</th>
+                        <th>@IndexResources.End</th>
+                        <th>@IndexResources.PatientExternalId</th>
+                        <th>@IndexResources.LocationExternalId</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+                            <td>@item.ExternalId</td>
+                            <td>@item.AppointmentStatusExternalId</td>
+                            <td>@item.Start</td>
+                            <td>@item.End</td>
+                            <td>@item.PatientExternalId</td>
+                            <td>@item.LocationExternalId</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("Get", "Appointments", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    <input name="id" class="form-control" type="text" value="@Model.Data.ExternalId" placeholder="@Resources.Search" />
+                </div>
+                <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+            </div>
+            <div class="row col-sm-12 visible-xs">
+                <button class="btn btn-primary">@Resources.GetData</button>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+            {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLocationExternalId" class="col-sm-3 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultLocationExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDoctorExternalId" class="col-sm-3 control-label">@IndexResources.DoctorExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultDoctorExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultDoctorExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultPatientExternalId" class="col-sm-3 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultPatientExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultAppointmentStatusExternalId" class="col-sm-3 control-label">@IndexResources.AppointmentStatusExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultAppointmentStatusExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultAppointmentStatusExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultStart" class="col-sm-3 control-label">@IndexResources.Start</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultStart", null, new { @class = "form-control", disabled = "disabled", id = "resultStart" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultEnd" class="col-sm-3 control-label">@IndexResources.End</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultEnd", null, new { @class = "form-control", disabled = "disabled", id = "resultEnd" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultCancelReason" class="col-sm-3 control-label">@IndexResources.CancelReason</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultCancelReason", null, new { @class = "form-control", disabled = "disabled", id = "resultCancelReason" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLocationExternalId" class="col-sm-3 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDoctorExternalId" class="col-sm-3 control-label">@IndexResources.DoctorExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.DoctorExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultDoctorExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultPatientExternalId" class="col-sm-3 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultAppointmentStatusExternalId" class="col-sm-3 control-label">@IndexResources.AppointmentStatusExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.AppointmentStatusExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultAppointmentStatusExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultStart" class="col-sm-3 control-label">@IndexResources.Start</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Start, null, new { @class = "form-control", disabled = "disabled", id = "resultStart" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultEnd" class="col-sm-3 control-label">@IndexResources.End</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.End, null, new { @class = "form-control", disabled = "disabled", id = "resultEnd" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultCancelReason" class="col-sm-3 control-label">@IndexResources.CancelReason</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.CancelReason, null, new { @class = "form-control", disabled = "disabled", id = "resultCancelReason" })
+                </div>
+            </div>
+            <div class="row col-sm-12">
+                @using (Html.BeginForm("Delete", "Appointments", FormMethod.Post))
+                {
+                    <input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+                    <button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "Appointments", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_LocationExternalId" class="col-sm-3 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_DoctorExternalId" class="col-sm-3 control-label">@IndexResources.DoctorExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.DoctorExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_PatientExternalId" class="col-sm-3 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_AppointmentStatusExternalId" class="col-sm-3 control-label">@IndexResources.AppointmentStatusExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.AppointmentStatusExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Start" class="col-sm-3 control-label">@IndexResources.Start</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Start, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_End" class="col-sm-3 control-label">@IndexResources.End</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.End, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_CancelReason" class="col-sm-3 control-label">@IndexResources.CancelReason</label>
+                <div class="col-sm-8">
+                    @Html.TextAreaFor(m => m.Data.CancelReason, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <button class="btn btn-primary">@Resources.SendData</button>}
+    </div>
+</div>

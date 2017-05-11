@@ -1,0 +1,124 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<PatientCommunicationModel>
+
+@using GlobalPortal.Api.Models.PatientCommunications;
+@using GlobalPortal.Api.Demo.Views.PatientCommunications
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+
+    var alreadysent = Model.Criteria.ContainsKey("AlreadySent") == true ? Model.Criteria["AlreadySent"] : string.Empty;
+    var utcCreationDate1 = Model.Criteria["UtcCreationDate1"];
+    var utcCreationDate2 = Model.Criteria["UtcCreationDate2"];
+    var patientCriteriaId = Model.Criteria["PatientCriteriaId"];
+    var appointmentCriteriaId = Model.Criteria["AppointmentCriteriaId"];
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (!string.IsNullOrWhiteSpace(Model.ResultMessage))
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Index", "PatientCommunications", FormMethod.Get, new { @class = "form-group" }))
+		{
+		   <div class="form-group">
+				<label for="alreadysent">@IndexResources.AlreadySent</label>
+				<br />
+				<div class="no-padding-left">
+					<select name="alreadysent" class="form-control">
+						<option value="" @(String.IsNullOrEmpty(alreadysent) ? "selected" : "")>@IndexResources.All</option>
+						<option value="true" @(alreadysent == "True" ? "selected" : "")>@IndexResources.Yes</option>
+						<option value="false" @(alreadysent == "False" ? "selected" : "")>@IndexResources.No</option>
+					</select>
+				</div>
+			</div>
+            <div class="form-group">
+                <label for="patientExternalId">@IndexResources.PatientExternalID</label>
+                <input type="text" name="patientCriteriaId" id="patientCriteriaId" value="@patientCriteriaId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="appointmentExternalId">@IndexResources.AppointmentExternalId</label>
+                <input type="text" name="appointmentCriteriaId" id="appointmentCriteriaId" value="@appointmentCriteriaId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>@IndexResources.DateCreated</label>
+                <br />
+                <div class="col-xs-5 no-padding-left">
+                    <input type="datetime" class="form-control" name="utcCreationDate1" value=@(DateTime.MinValue.ToString()==utcCreationDate1?"mm/dd/yyyy":utcCreationDate1)>
+                </div>
+                <div class="col-xs-2 col-sm-1 margin-top-3">
+                    @IndexResources.And
+                </div>
+                <div class="col-xs-5 no-padding-left">
+                    <input type="datetime" class="form-control" name="utcCreationDate2" value=@(DateTime.MaxValue.ToString()==utcCreationDate2?"mm/dd/yyyy":utcCreationDate2)>
+                </div>
+            </div>
+            <div class="form-group margin-top-10">
+                <button class="btn btn-primary" type="submit">@Resources.Search</button>
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+        {
+            <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+        }
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-4">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-1">
+                    <col class="col-xs-1">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="font-size-13">@IndexResources.PatientCommunicationID</th>
+                        <th class="font-size-13">@IndexResources.Created</th>
+                        <th class="font-size-13">@IndexResources.Method</th>
+                        <th class="font-size-13">@IndexResources.Type</th>
+                        <th class="font-size-13">@IndexResources.PatientExternalID</th>
+                        <th class="font-size-13">@IndexResources.Sent</th>
+                        <th class="font-size-13">@IndexResources.AppointmentExternalId</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+                            <td>@item.PatientCommunicationID</td>
+                            <td>@item.Created.ToShortDateString()</td>
+                            <td>@item.Method</td>
+                            <td>@item.Type</td>
+                            <td>@item.PatientExternalId</td>
+                            <td>@item.AlreadySent</td>
+                            <td>@item.AppointmentExternalId</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalPortal.Api.Client", "GlobalPortal.Api.Client\GlobalPortal.Api.Client.csproj", "{5A998CEE-FC2D-45D6-852F-338965DF951F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalPortal.Api.Demo", "GlobalPortal.Api.Demo\GlobalPortal.Api.Demo.csproj", "{A1D76AAA-F0AE-4400-A973-10B9A8EC038C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{E840100C-37B0-4923-B056-6C7C29136B62}"
+	ProjectSection(SolutionItems) = preProject
+		References\GlobalPortal.Api.Models.dll = References\GlobalPortal.Api.Models.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{CECF8EED-5A3B-4162-A1B5-D9D66B09D848}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A998CEE-FC2D-45D6-852F-338965DF951F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A998CEE-FC2D-45D6-852F-338965DF951F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A998CEE-FC2D-45D6-852F-338965DF951F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A998CEE-FC2D-45D6-852F-338965DF951F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D76AAA-F0AE-4400-A973-10B9A8EC038C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D76AAA-F0AE-4400-A973-10B9A8EC038C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D76AAA-F0AE-4400-A973-10B9A8EC038C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D76AAA-F0AE-4400-A973-10B9A8EC038C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECF8EED-5A3B-4162-A1B5-D9D66B09D848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECF8EED-5A3B-4162-A1B5-D9D66B09D848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECF8EED-5A3B-4162-A1B5-D9D66B09D848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECF8EED-5A3B-4162-A1B5-D9D66B09D848}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://172.17.2.180:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GlobalPortal.Api.Client\\GlobalPortal.Api.Client.csproj
+		SccProjectName1 = GlobalPortal.Api.Client
+		SccLocalPath1 = GlobalPortal.Api.Client
+		SccProjectUniqueName2 = GlobalPortal.Api.Demo\\GlobalPortal.Api.Demo.csproj
+		SccProjectName2 = GlobalPortal.Api.Demo
+		SccLocalPath2 = GlobalPortal.Api.Demo
+		SccProjectUniqueName3 = Test\\Test.csproj
+		SccProjectName3 = Test
+		SccLocalPath3 = Test
+	EndGlobalSection
+EndGlobal

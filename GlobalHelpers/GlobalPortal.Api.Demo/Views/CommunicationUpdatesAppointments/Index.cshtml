@@ -1,0 +1,91 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<AppointmentUpdateModel>
+
+@using GlobalPortal.Api.Models.AppointmentUpdates;
+@using GlobalPortal.Api.Demo.Views.CommunicationUpdatesAppointments
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+	ViewBag.Title = IndexResources.PageTitle;
+
+	var appointmentExternalID = Model.Criteria["AppointmentExternalID"];
+	var alreadysent = Model.Criteria["AlreadySent"];
+    var method = Model.Criteria["Method"];
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+    <div class="panel-body">
+		@using (Html.BeginForm("Index", "CommunicationUpdatesAppointments", FormMethod.Get, new { @class = "form-group" }))
+        {
+            <div class="form-group">
+                <label for="method">@IndexResources.Method</label>
+                <br />
+                <div class="no-padding-left">
+                    <select name="method" class="form-control">
+                        <option value="" @(String.IsNullOrEmpty(method) ? "selected" : "")>@Resources.All</option>
+                        <option value="Email" @(method == "Email" ? "selected" : "")>@Resources.Email</option>
+                        <option value="Sms" @(method == "Sms" ? "selected" : "")>@Resources.SMS</option>
+                        <option value="Voice" @(method == "Voice" ? "selected" : "")>@Resources.Voice</option>
+                    </select>
+                </div>
+            </div>
+			<div class="form-group">
+				<label for="alreadysent">@IndexResources.AlreadySent</label>
+				<br />
+				<div class="no-padding-left">
+					<select name="alreadysent" class="form-control">
+						<option value="" @(String.IsNullOrEmpty(alreadysent) ? "selected" : "")>@IndexResources.All</option>
+						<option value="true" @(alreadysent == "True" ? "selected" : "")>@Resources.Yes</option>
+						<option value="false" @(alreadysent == "False" ? "selected" : "")>@Resources.No</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="appointmentExternalID">@IndexResources.AppointmentID</label>
+				<input type="text" name="appointmentExternalID" id="appointmentExternalID" value="@appointmentExternalID" class="form-control" />
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">@Resources.Search</button>
+			</div>
+		}
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-4">
+                    <col class="col-xs-4">
+					<col class="col-xs-4">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>@IndexResources.AppointmentUpdateID</th>
+						<th>@IndexResources.AppointmentID</th>
+                        <th>@IndexResources.Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+							<td>@item.AppointmentUpdateID</td>
+                            <td>@item.AppointmentExternalID</td>
+                            <td>@item.UpdateStatusTo</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

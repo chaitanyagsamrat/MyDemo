@@ -1,0 +1,108 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<ServiceTypeDurationModel>
+
+@using GlobalPortal.Api.Models.ServicesTypeDuration
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.ServiceTypeDurations
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+	ViewBag.Title = IndexResources.PageTitle;
+	var patientServiceTypeId = Model.Data.PatientServiceTypeId != Guid.Empty ? Model.Data.PatientServiceTypeId.ToString() : string.Empty;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+        <div class="code">
+            @using (Html.BeginForm("Get", "ServiceTypeDurations", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    <label for="id" class="col-sm-1 control-label">@Resources.ID</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="id" name="id" placeholder="@Resources.Search" value="@patientServiceTypeId">
+                    </div>
+                    <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+                </div>
+                <div class="row col-sm-12 visible-xs">
+                    <button class="btn btn-primary">@Resources.GetData</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.PatientServiceTypeId == Guid.Empty)
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-1 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDuration" class="col-sm-1 control-label">@IndexResources.Duration</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultDuration", null, new { @class = "form-control", disabled = "disabled", id = "resultDuration" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-1 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientServiceTypeId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDuration" class="col-sm-1 control-label">@IndexResources.Duration</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Duration, null, new { @class = "form-control", disabled = "disabled", id = "resultDuration" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        <div class="code">
+            @using (Html.BeginForm("Send", "ServiceTypeDurations", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    <label for="Data_Id" class="col-sm-1 control-label">@Resources.ID</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.PatientServiceTypeId, null, new { @class = "form-control", id = "Data_Id" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_Duration" class="col-sm-1 control-label">@IndexResources.Duration</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.Duration, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <button class="btn btn-primary">@Resources.SendData</button>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,90 @@
+﻿
+@model GlobalPortal.Api.Demo.Models.GenericModel<PrefixModel>
+
+@using GlobalPortal.Api.Models.Prefixes
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.Prefixes
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-1 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultName" class="col-sm-1 control-label">@IndexResources.Name</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultName", null, new { @class = "form-control", disabled = "disabled", id = "resultName" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-1 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultName" class="col-sm-1 control-label">@IndexResources.Name</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Name, null, new { @class = "form-control", disabled = "disabled", id = "resultName" })
+                </div>
+            </div>
+            <div class="row col-sm-12">
+                @using (Html.BeginForm("Delete", "Prefixes", FormMethod.Post))
+                {
+                    <input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+                    <button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        <div class="code">
+            @using (Html.BeginForm("Send", "Prefixes", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    <label for="ExternalId" class="col-sm-1 control-label">@Resources.ID</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Name" class="col-sm-1 control-label">@IndexResources.Name</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.Name, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <button class="btn btn-primary">@Resources.SendData</button>
+            }
+        </div>
+    </div>
+</div>
+
+

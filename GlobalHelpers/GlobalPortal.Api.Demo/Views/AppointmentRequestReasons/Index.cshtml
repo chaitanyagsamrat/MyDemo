@@ -1,0 +1,121 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<AppointmentRequestReasonModel>
+
+@using GlobalPortal.Api.Models.AppointmentRequestReasons
+
+@using GlobalPortal.Api.Demo.Views.AppointmentRequestReasons
+@using GlobalPortal.Api.Demo.Properties
+@using GlobalPortal.Api.Models
+
+@{
+	ViewBag.Title = IndexResources.PageTitle;
+	var changed = Model.Criteria["changed"];
+	var isDeleted = Model.Criteria["isDeleted"];
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ResultMessage != string.Empty)
+{
+	<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+	<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+	<div class="panel-heading">@Resources.SearchResults</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("Index", "AppointmentRequestReasons", FormMethod.Get, new { @class = "form-group" }))
+		{
+			<div class="form-group">
+				<label for="changed">@IndexResources.Changed</label>
+				<br />
+				<div class="no-padding-left">
+					<select name="changed" class="form-control">
+						<option value="" @(String.IsNullOrEmpty(changed) ? "selected" : "")>@IndexResources.All</option>
+						<option value="true" @(changed == "True" ? "selected" : "")>@Resources.Yes</option>
+						<option value="false" @(changed == "False" ? "selected" : "")>@Resources.No</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="isDeleted">@IndexResources.IsLogicalDeleted</label>
+				<br />
+				<div class="no-padding-left">
+					<select name="isDeleted" class="form-control">
+						<option value="" @(String.IsNullOrEmpty(isDeleted) ? "selected" : "")>@IndexResources.All</option>
+						<option value="true" @(isDeleted == "True" ? "selected" : "")>@Resources.Yes</option>
+						<option value="false" @(isDeleted == "False" ? "selected" : "")>@Resources.No</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">@Resources.Search</button>
+			</div>
+		}
+
+		@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+		{
+			<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+		}
+
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped">                
+				<thead>
+					<tr>
+						<th class="text-center">@IndexResources.InternalID</th>
+						<th class="text-center">@IndexResources.Name</th>
+						<th class="text-center">@IndexResources.SlotDuration</th>
+						<th class="text-center">@IndexResources.Changed</th>
+						<th class="text-center">@IndexResources.AppliesToNewPatients</th>
+						<th class="text-center">@IndexResources.AppliesToExistentPatients</th>
+						<th class="text-center">@IndexResources.IsLogicalDeleted</th>
+						<th class="text-center">@IndexResources.Active</th>
+						<th class="text-center">@IndexResources.LastChanged</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model.SearchResults.Rows)
+					{
+						<tr>
+							<td>@item.InternalId</td>
+							<td>@item.Name</td>
+							<td>@item.SlotDuration</td>
+							<td>@(item.Changed ? Resources.Yes : Resources.No)</td>
+							<td>@(item.AppliesToNewPatients ? Resources.Yes : Resources.No)</td>
+							<td>@(item.AppliesToExistentPatients ? Resources.Yes : Resources.No)</td>
+							<td>@(item.IsLogicalDeleted ? Resources.Yes : Resources.No)</td>
+							<td>@(item.Active ? Resources.Yes : Resources.No)</td>
+							<td>@item.LastChanged</td>
+						</tr>
+					}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">@IndexResources.UpdateReason</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("Send", "AppointmentRequestReasons", FormMethod.Post, new { @class = "form-horizontal" }))
+			{
+			<div class="form-group">
+				<label for="InternalId" class="col-sm-2 control-label">@Resources.ID</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.InternalId, null, new { @class = "form-control", id = "InternalId" })
+				</div>
+			</div>            
+			<div class="form-group">
+				<label for="slotDuration" class="col-sm-2 control-label">@IndexResources.SlotDuration</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.SlotDuration, new { id = "slotDuration" })
+				</div>
+			</div>
+			<div class="form-group col-sm-12">
+				<button class="btn btn-primary" type="submit">@IndexResources.SendData</button>
+			</div>
+		}
+	</div>
+</div>

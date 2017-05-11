@@ -1,0 +1,57 @@
+﻿@model GlobalPortal.Api.Demo.Models.MarkAsReceivedModel
+
+@using GlobalPortal.Api.Demo.Views.MarkAsReceived
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.Success == true && !string.IsNullOrWhiteSpace(Model.ResultMessage))
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+else if(Model.Success == false && !string.IsNullOrWhiteSpace(Model.ResultMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">@IndexResources.Mark</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "MarkAsReceived", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="MarkAsSentID" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.MarkAsReceivedID, null, new { @class = "form-control", id = "MarkAsSentID" })
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="objectTypeSelect" class="col-sm-2 control-label">@IndexResources.ObjectType</label>
+                    <div class="col-sm-8">
+                        <select name="objectType" class="form-control">
+                            <option value="@IndexResources.Choose">@IndexResources.Choose</option>
+                            <option value="@IndexResources.AppointmentCancelRequest"  @(Model.ObjectType == @IndexResources.AppointmentCancelRequest ? "selected" : "")>@IndexResources.AppointmentCancelRequest</option>
+                            <option value="@IndexResources.AppointmentRequest"  @(Model.ObjectType == @IndexResources.AppointmentRequest ? "selected" : "")>@IndexResources.AppointmentRequest</option>
+							<option value="@IndexResources.AppointmentUpdate" @(Model.ObjectType == @IndexResources.AppointmentUpdate ? "selected" : "")>@IndexResources.AppointmentUpdate</option>
+                            <option value="@IndexResources.CommunicationUpdate" @(Model.ObjectType == @IndexResources.CommunicationUpdate ? "selected" : "")>@IndexResources.CommunicationUpdate</option>
+							<option value="@IndexResources.PatientUpdate" @(Model.ObjectType == @IndexResources.PatientUpdate ? "selected" : "")>@IndexResources.PatientUpdate</option>
+							<option value="@IndexResources.OrderUpdate" @(Model.ObjectType == @IndexResources.OrderUpdate ? "selected" : "")>@IndexResources.OrderUpdate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <button class="btn btn-primary" type="submit">@IndexResources.SendData</button>
+                </div>
+        }
+    </div>
+</div>
+
+
+
+

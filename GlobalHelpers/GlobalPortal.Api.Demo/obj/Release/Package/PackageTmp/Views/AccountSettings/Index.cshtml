@@ -1,0 +1,84 @@
+﻿
+@model GlobalPortal.Api.Demo.Models.GenericModel<AccountSettingsModel>
+
+@using GlobalPortal.Api.Models.AccountSettings
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.AccountSettings
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (!string.IsNullOrWhiteSpace(Model.ResultMessage)) 
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@IndexResources.EditSettings</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "AccountSettings", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(m => m.Data.AccountId, new { @class = "form-control" })
+            <div class="form-group">
+                  <label for="Data_LinkedInUrl" class="col-sm-4 control-label">@IndexResources.LinkedInUrl</label>
+                  <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.LinkedInUrl, null, new { @class = "form-control" })
+                  </div>
+            </div>
+                <div class="form-group">
+                    <label for="Data_YahooUrl" class="col-sm-4 control-label">@IndexResources.YahooUrl</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.YahooUrl, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_GooglePlusUrl" class="col-sm-4 control-label">@IndexResources.GooglePlusUrl</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.GooglePlusUrl, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_FacebookUrl" class="col-sm-4 control-label">@IndexResources.FacebookUrl</label>
+                    <div class="col-sm-8">
+                       @Html.TextBoxFor(m => m.Data.FacebookUrl, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_AppointmentAllowedTimeInAdvance" class="col-sm-4 control-label">@IndexResources.AppointmentAllowedTimeInAdvance</label>
+                    <div class="col-sm-8">
+                        <time></time>
+                        @Html.TextBoxFor(m => m.Data.AppointmentAllowedTimeInAdvance, "{0:hh\\:mm}", new { @class = "form-control", placeholder = "hh:mm" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_AllowsOnlineAppointments" class="col-sm-4 control-label">@IndexResources.OnlineAppointmentsActive</label>
+                    <div class="col-sm-8">
+                        @Html.CheckBoxFor(m => m.Data.OnlineAppointmentsActive)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_UsesForms" class="col-sm-4 control-label">@IndexResources.UsesForms</label>
+                    <div class="col-sm-8">
+                        @Html.CheckBoxFor(m => m.Data.UsesForms)
+                    </div>
+                </div>
+                <button class="btn btn-primary">@Resources.SendData</button>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,296 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<LocationModel>
+
+@using GlobalPortal.Api.Models
+@using GlobalPortal.Api.Models.Locations
+
+@using GlobalPortal.Api.Demo.Views.Locations
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+    var criteriaID = Model.Criteria["criteriaId"];
+    var name = Model.Criteria["name"];
+
+    string emailAddress = string.Empty;
+    if (Model.Data.Contact.EmailAddresses.Count > 0)
+    {
+        var defaultemailAddress = Model.Data.Contact.EmailAddresses.Where(e => e.Default == true).FirstOrDefault();
+        emailAddress = defaultemailAddress != null ? defaultemailAddress.Address : Model.Data.Contact.EmailAddresses.First().Address;
+    }
+
+    string phoneNumber = string.Empty;
+    if (Model.Data.Contact.PhoneNumbers.Count > 0)
+    {
+        var defaultPhoneNumber = Model.Data.Contact.PhoneNumbers.Where(p => p.Default == true).FirstOrDefault();
+        phoneNumber = defaultPhoneNumber != null ? defaultPhoneNumber.Number : Model.Data.Contact.PhoneNumbers.First().Number;
+    }
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Index", "Locations", FormMethod.Get, new { @class = "form-inline form-group" }))
+        {
+            <div class="input-group">
+                <div class="input-group-addon">@IndexResources.SearchByName</div>
+                <input type="text" name="name" class="form-control" value="@name" placeholder="@Resources.Search">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">@Resources.Search</button>
+                </span>
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+        {
+            <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+        }
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>@Resources.ID</th>
+                        <th>@IndexResources.Name</th>
+                        <th>@IndexResources.TimeZoneId</th>
+                        <th>@IndexResources.CommunicationSendingFromHour</th>
+                        <th>@IndexResources.CommunicationSendingToHour</th>
+                        <th>@IndexResources.Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+                            <td>@item.ExternalId</td>
+                            <td>@item.Name</td>
+                            <td>@item.TimeZoneId</td>
+                            <td>@item.CommunicationSendingFromHour</td>
+                            <td>@item.CommunicationSendingToHour</td>
+                            <td>@(item.Active ? Resources.Yes : Resources.No)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Get", "Locations", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label for="criteriaID" class="col-sm-4 control-label">@Resources.ID</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="criteriaID" name="criteriaID" placeholder="@Resources.Search">
+            </div>
+            <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+        </div>
+        <div class="row col-sm-12 visible-xs">
+            <button class="btn btn-primary">@Resources.GetData</button>
+        </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+            {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-4 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultName" class="col-sm-4 control-label">@IndexResources.Name</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultName", null, new { @class = "form-control", disabled = "disabled", id = "resultName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultEmailAddress" class="col-sm-4 control-label">@IndexResources.Email</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultEmailAddress", null, new { @class = "form-control", disabled = "disabled", id = "resultEmailAddress" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultPhoneNumber" class="col-sm-4 control-label">@IndexResources.PhoneNumber</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultPhoneNumber", null, new { @class = "form-control", disabled = "disabled", id = "resultPhoneNumber" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultTimeZoneId" class="col-sm-4 control-label">@IndexResources.TimeZoneId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultTimeZoneId", null, new { @class = "form-control", disabled = "disabled", id = "resultTimeZoneId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultComunicationSendingFromHour" class="col-sm-4 control-label">@IndexResources.CommunicationSendingFromHour</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultComunicationSendingFromHour", null, new { @class = "form-control", disabled = "disabled", id = "resultComunicationSendingFromHour" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultComunicationSendingToHour" class="col-sm-4 control-label">@IndexResources.CommunicationSendingToHour</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultComunicationSendingToHour", null, new { @class = "form-control", disabled = "disabled", id = "resultComunicationSendingToHour" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultActive" class="col-sm-4 control-label">@IndexResources.Active</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultActive", null, new { @class = "form-control", disabled = "disabled", id = "resultActive" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-4 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultName" class="col-sm-4 control-label">@IndexResources.Name</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Name, null, new { @class = "form-control", disabled = "disabled", id = "resultName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultEmail" class="col-sm-4 control-label">@IndexResources.Email</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="resultEmail" value="@emailAddress" disabled>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultPhoneNumber" class="col-sm-4 control-label">@IndexResources.PhoneNumber</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="resultPhoneNumber" value="@phoneNumber" disabled>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultTimeZoneId" class="col-sm-4 control-label">@IndexResources.TimeZoneId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.TimeZoneId, null, new { @class = "form-control", disabled = "disabled", id = "resultTimeZoneId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultComunicationSendingFromHour" class="col-sm-4 control-label">@IndexResources.CommunicationSendingFromHour</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.CommunicationSendingFromHour, null, new { @class = "form-control", disabled = "disabled", id = "resultComunicationSendingFromHour" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultComunicationSendingToHour" class="col-sm-4 control-label">@IndexResources.CommunicationSendingToHour</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.CommunicationSendingToHour, null, new { @class = "form-control", disabled = "disabled", id = "resultComunicationSendingToHour" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultActive" class="col-sm-4 control-label">@IndexResources.Active</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultActive", Model.Data.Active ? Resources.Yes : Resources.No, new { @class = "form-control", disabled = "disabled", id = "resultActive" })
+                </div>
+            </div>
+            <div class="row col-sm-12">
+                @using (Html.BeginForm("Delete", "Locations", FormMethod.Post))
+                {
+                <input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+                <button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "Locations", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-4 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Name" class="col-sm-4 control-label">@IndexResources.Name</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Name, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="Data_Contact_EmailAddress" class="col-sm-4 control-label">@IndexResources.Email</label>
+                <div class="col-sm-8">
+                    <input type="hidden" class="form-control" name="Data.Contact.EmailAddresses[0].Default" value="true">
+                    <input class="form-control" name="Data.Contact.EmailAddresses[0].Address" id="Data_Contact_EmailAddress" value="@emailAddress">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="Data_Contact_PhoneNumber" class="col-sm-4 control-label">@IndexResources.PhoneNumber</label>
+                <div class="col-sm-8">
+                    <input type="hidden" class="form-control" name="Data.Contact.PhoneNumbers[0].Default" value="true">
+                    <input class="form-control" name="Data.Contact.PhoneNumbers[0].Number" id="Data_Contact_PhoneNumber" value="@phoneNumber">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_TimeZoneId" class="col-sm-4 control-label">@IndexResources.TimeZoneId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.TimeZoneId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_ComunicationSendingFromHour" class="col-sm-4 control-label">@IndexResources.CommunicationSendingFromHour</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.CommunicationSendingFromHour, "{0:hh\\:mm}", new { @class = "form-control", placeholder = "hh:mm" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_ComunicationSendingToHour" class="col-sm-4 control-label">@IndexResources.CommunicationSendingToHour</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.CommunicationSendingToHour, "{0:hh\\:mm}", new { @class = "form-control", placeholder = "hh:mm" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_Active" class="col-sm-4 control-label">@IndexResources.Active</label>
+                <div class="col-sm-8">
+                    @Html.CheckBoxFor(m => m.Data.Active)
+                </div>
+            </div>
+            <button class="btn btn-primary">@Resources.SendData</button>}
+    </div>
+</div>

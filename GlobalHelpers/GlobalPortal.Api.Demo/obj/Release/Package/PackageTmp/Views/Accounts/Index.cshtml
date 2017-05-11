@@ -1,0 +1,149 @@
+﻿
+@model GlobalPortal.Api.Demo.Models.AccountModel
+
+@using GlobalPortal.Api.Models.Accounts
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.Accounts
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+	ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+<div class="alert alert-info">
+	<p>Although you can create new accounts using this page, the rest of the demo program will continue working with the default demo account. If you want to create a new account and fill it with your information, please <a class="underline" href="http://demo.api.mveportal.com/downloads/EyeReachPatientsApiDemo.zip">download the demo</a> and set it up to use the new account that you are going to create.</p>
+</div>
+@if (Model.ResultMessage != string.Empty)
+{
+	<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+	<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+	<div class="panel-heading">@Resources.ResultsHeader</div>
+	<div class="panel-body">
+		@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+		{
+			<div class="row form-group">
+				<label for="resultAccountId" class="col-sm-3 control-label">@IndexResources.AccountId</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultAccountId", null, new { @class = "form-control", disabled = "disabled", id = "resultAccountId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultAccountNumber" class="col-sm-3 control-label">@IndexResources.AccountNumber</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultAccountNumber", null, new { @class = "form-control", disabled = "disabled", id = "resultAccountNumber" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultSynchronizationUserName" class="col-sm-3 control-label">@IndexResources.SynchronizationUserName</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultSynchronizationUserName", null, new { @class = "form-control", disabled = "disabled", id = "resultSynchronizationUserName" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultSynchronizationPassword" class="col-sm-3 control-label">@IndexResources.SynchronizationPassword</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultSynchronizationPassword", null, new { @class = "form-control", disabled = "disabled", id = "resultSynchronizationPassword" })
+				</div>
+			</div>
+		}
+		else
+		{
+			<div class="row form-group">
+				<label for="resultAccountId" class="col-sm-3 control-label">@IndexResources.AccountId</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Results.AccountId, null, new { @class = "form-control", disabled = "disabled", id = "resultAccountId" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultAccountNumber" class="col-sm-3 control-label">@IndexResources.AccountNumber</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Results.AccountNumber, null, new { @class = "form-control", disabled = "disabled", id = "resultAccountNumber" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultSynchronizationUserName" class="col-sm-3 control-label">@IndexResources.SynchronizationUserName</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Results.SynchronizationUserName, null, new { @class = "form-control", disabled = "disabled", id = "resultSynchronizationUserName" })
+				</div>
+			</div>
+			<div class="row form-group">
+				<label for="resultSynchronizationPassword" class="col-sm-3 control-label">@IndexResources.SynchronizationPassword</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Results.SynchronizationPassword, null, new { @class = "form-control", disabled = "disabled", id = "resultSynchronizationPassword" })
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">@Resources.AddHeader</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("Send", "Accounts", FormMethod.Post, new { @class = "form-horizontal" }))
+		{
+			@Html.ValidationSummary(true)
+			<div class="form-group">
+				<label for="Data_AccountName" class="col-sm-3 control-label">@IndexResources.Name</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AccountName, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_AccountOwnerExternalId" class="col-sm-3 control-label">@IndexResources.AccountOwnerExternalID</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AccountOwnerExternalId, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_AccountOwnerFirstName" class="col-sm-3 control-label">@IndexResources.AccountOwnerFirstName</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AccountOwnerFirstName, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_AccountOwnerMiddleName" class="col-sm-3 control-label">@IndexResources.AccountOwnerMiddleName</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AccountOwnerMiddleName, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_AccountOwnerLastName" class="col-sm-3 control-label">@IndexResources.AccountOwnerLastName</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AccountOwnerLastName, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_Username" class="col-sm-3 control-label">@IndexResources.Username</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.Username, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_Password" class="col-sm-3 control-label">@IndexResources.Password</label>
+				<div class="col-sm-8">
+					@Html.PasswordFor(m => m.Data.Password, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_AccountOwnerEmailAddress" class="col-sm-3 control-label">@IndexResources.Email</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.AccountOwnerEmailAddress, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Data_PartnerKey" class="col-sm-3 control-label">@IndexResources.PartnerKey</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.PartnerKey, null, new { @class = "form-control" })
+				</div>
+			</div>
+			<button class="btn btn-primary">@Resources.SendData</button>}
+	</div>
+</div>

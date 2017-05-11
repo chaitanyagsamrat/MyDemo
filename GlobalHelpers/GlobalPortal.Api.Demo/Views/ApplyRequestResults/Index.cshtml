@@ -1,0 +1,55 @@
+﻿@model GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel
+
+@using GlobalPortal.Api.Demo.Views.ApplyRequestResults
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+  <div class="panel panel-default">
+    <div class="panel-heading">@IndexResources.ApplyResults</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "ApplyRequestResults", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            <div class="form-group">
+                <label for="MarkAsReceivedID" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.InternalIDString, null, new { @class = "form-control", id = "MarkAsReceivedID" })
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="objectType" class="col-sm-2 control-label">@IndexResources.ObjectType</label>
+                    <div class="col-sm-8">
+                        <select name="objectType" id="objectType" class="form-control">
+                            <option value="@IndexResources.Choose">@IndexResources.Choose</option>
+                            <option value="@IndexResources.AppointmentCancelRequest" >@IndexResources.AppointmentCancelRequest</option>
+                            <option value="@IndexResources.AppointmentRequest">@IndexResources.AppointmentRequest</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Approved" class="col-sm-2 control-label">@IndexResources.Approved</label>
+                    <div class="col-sm-8">
+                        @Html.CheckBoxFor(m => m.Approved, new { id = "Approved" })
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <button class="btn btn-primary" type="submit">@IndexResources.SendData</button>
+                </div>
+        }
+    </div>
+</div>
+
+
+

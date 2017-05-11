@@ -1,0 +1,448 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<OrderModel>
+
+@using GlobalPortal.Api.Models.Orders
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.Orders
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+
+    var criteriaID = Model.Criteria["criteriaId"];
+
+    string orderDetailExternalId = string.Empty;
+    string productDescription = string.Empty;
+    var quantity = 0;
+    decimal? retailPrice = null;
+    decimal unitPrice = 0;
+    decimal tax1 = 0;
+    decimal tax2 = 0;
+
+    if (Model.Data.OrderDetails.Count > 0)
+    {
+        var orderDetails = Model.Data.OrderDetails.Where(p => !p.OrderDetailExternalId.IsEmpty()).FirstOrDefault();
+        orderDetailExternalId = orderDetails != null ? orderDetails.OrderDetailExternalId : string.Empty;
+        productDescription = orderDetails != null ? orderDetails.ProductDescription : string.Empty;
+        quantity = orderDetails != null ? orderDetails.Quantity : 0;
+        retailPrice = orderDetails != null ? orderDetails.RetailPrice : null;
+        unitPrice = orderDetails != null ? orderDetails.UnitPrice : 0;
+        tax1 = orderDetails != null ? orderDetails.Tax1 : 0;
+        tax2 = orderDetails != null ? orderDetails.Tax2 : 0;
+
+    }
+
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+
+    <div class="panel-body">
+        @using (Html.BeginForm("Index", "Orders", FormMethod.Get, new { @class = "form-inline form-group" }))
+            {
+            <div class="input-group">
+                <div class="input-group-addon">@Resources.SearchByID</div>
+                <input type="text" class="form-control" id="criteriaID" name="criteriaID" value="@criteriaID" placeholder=@IndexResources.Search>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">@Resources.Search</button>
+                </span>
+            </div>
+        }
+        <br />
+
+        @if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+            {
+            <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+        }
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>@IndexResources.ExternalID</th>
+                        <th>@IndexResources.Created</th>
+                        <th>@IndexResources.OrderBalance</th>
+                        <th>@IndexResources.Type</th>
+                        <th>@IndexResources.OrderDetails</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+                            <td>@item.ExternalId</td>
+                            <td>@item.Created.ToString()</td>
+                            <td>@item.OrderBalance</td>
+                            <td>@item.Type</td>
+                            <td>@item.OrderDetails.Count</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Get", "Orders", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <label for="id" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="id" name="criteriaID" value="@criteriaID" placeholder="@IndexResources.Search">
+                </div>
+                <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+            </div>
+            <div class="row col-sm-12 visible-xs">
+                <button class="btn btn-primary">@Resources.GetData</button>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@IndexResources.Result</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+            {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultPatientExternalId" class="col-sm-3 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultPatientExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultLocationExternalId" class="col-sm-3 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultLocationExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultOrderBalance" class="col-sm-3 control-label">@IndexResources.OrderBalance</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultOrderBalance", null, new { @class = "form-control", disabled = "disabled", id = "resultOrderBalance" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultPatientBalance" class="col-sm-3 control-label">@IndexResources.PatientBalance</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultPatientBalance", null, new { @class = "form-control", disabled = "disabled", id = "resultPatientBalance" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultType" class="col-sm-3 control-label">@IndexResources.Type</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultType", null, new { @class = "form-control", disabled = "disabled", id = "resultType" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultOrderDetailId" class="col-sm-3 control-label">@IndexResources.OrderDetailID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultOrderDetailId", null, new { @class = "form-control", disabled = "disabled", id = "resultOrderDetailId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultQuantity" class="col-sm-3 control-label">@IndexResources.Quantity</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultQuantity", null, new { @class = "form-control", @type = "number", disabled = "disabled", id = "resultQuantity" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label class="col-sm-3 control-label">@IndexResources.OrderDetailNumberOne</label>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultExternalID" class="col-sm-3 control-label">@IndexResources.OrderDetailID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("ExternalID", null, new { @class = "form-control", disabled = "disabled", id = "resultExternalID" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultProductDescription" class="col-sm-3 control-label">@IndexResources.ProductDescription</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("ProductDescription", null, new { @class = "form-control", disabled = "disabled", id = "resultProductDescription" })
+                </div>
+            </div>
+
+                <div class="row form-group">
+                    <label for="resultQuantity" class="col-sm-3 control-label">@IndexResources.Quantity</label>
+                    <div class="col-sm-8">
+                        @Html.TextBox("resultQuantity", null, new { @class = "form-control", @type = "number", disabled = "disabled", id = "resultQuantity" })
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="resultRetailPrice" class="col-sm-3 control-label">@IndexResources.RetailPrice</label>
+                    <div class="col-sm-8">
+                        @Html.TextBox("RetailPrice", null, new { @class = "form-control", disabled = "disabled", id = "resultRetailPrice" })
+                    </div>
+                </div>
+
+                    <div class="row form-group">
+                        <label for="resultUnitPrice" class="col-sm-3 control-label">@IndexResources.UnitPrice</label>
+                        <div class="col-sm-8">
+                            @Html.TextBox("resultUnitPrice", null, new { @class = "form-control", @type = "number", disabled = "disabled", id = "resultUnitPrice" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultTax1" class="col-sm-3 control-label">@IndexResources.OrderDetailID</label>
+                        <div class="col-sm-8">
+                            @Html.TextBox("Tax1", null, new { @class = "form-control", disabled = "disabled", id = "resultTax1" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultTax2" class="col-sm-3 control-label">@IndexResources.OrderDetailID</label>
+                        <div class="col-sm-8">
+                            @Html.TextBox("Tax2", null, new { @class = "form-control", disabled = "disabled", id = "resultTax2" })
+                        </div>
+                    </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+
+                    <div class="row form-group">
+                        <label for="resultPatientExternalId" class="col-sm-3 control-label">@IndexResources.PatientExternalId</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultLocationExternalId" class="col-sm-3 control-label">@IndexResources.LocationExternalId</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultOrderBalance" class="col-sm-3 control-label">@IndexResources.OrderBalance</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderBalance, null, new { @class = "form-control", disabled = "disabled", id = "resultOrderBalance" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultPatientBalance" class="col-sm-3 control-label">@IndexResources.PatientBalance</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.PatientBalance, null, new { @class = "form-control", disabled = "disabled", id = "resultPatientBalance" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultType" class="col-sm-3 control-label">@IndexResources.Type</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.Type, null, new { @class = "form-control", disabled = "disabled", id = "resultType" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="col-sm-3 control-label">@IndexResources.OrderDetailNumberOne</label>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultExternalID" class="col-sm-3 control-label">@IndexResources.OrderDetailID</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderDetails[0].OrderDetailExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultExternalID" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultProductDescription" class="col-sm-3 control-label">@IndexResources.ProductDescription</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderDetails[0].ProductDescription, null, new { @class = "form-control", disabled = "disabled", id = "resultProductDescription" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultQuantity" class="col-sm-3 control-label">@IndexResources.Quantity</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderDetails[0].Quantity, null, new { @class = "form-control", @type = "number", disabled = "disabled", id = "resultQuantity" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultRetailPrice" class="col-sm-3 control-label">@IndexResources.RetailPrice</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderDetails[0].RetailPrice, null, new { @class = "form-control", disabled = "disabled", id = "resultRetailPrice" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultUnitPrice" class="col-sm-3 control-label">@IndexResources.UnitPrice</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderDetails[0].UnitPrice, null, new { @class = "form-control", @type = "number", disabled = "disabled", id = "resultUnitPrice" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultTax1" class="col-sm-3 control-label">@IndexResources.Tax1</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderDetails[0].Tax1, null, new { @class = "form-control", disabled = "disabled", id = "resultTax1" })
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="resultTax2" class="col-sm-3 control-label">@IndexResources.Tax2</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Data.OrderDetails[0].Tax2, null, new { @class = "form-control", disabled = "disabled", id = "resultTax2" })
+                        </div>
+                    </div>
+
+                    <div class="row col-sm-12">
+                        @using (Html.BeginForm("Delete", "Orders", FormMethod.Post))
+                {
+                            <input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+                            <button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+                        }
+                    </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "Orders", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_PatientExternalId" class="col-sm-3 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_LocationExternalId" class="col-sm-3 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_OrderBalance" class="col-sm-3 control-label">@IndexResources.OrderBalance</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.OrderBalance, null, new { @class = "form-control", @type = "number" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_PatientBalance" class="col-sm-3 control-label">@IndexResources.PatientBalance</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientBalance, null, new { @class = "form-control", @type = "number" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_Type" class="col-sm-3 control-label">@IndexResources.Type</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Type, null, new { @class = "form-control", placeholder = "Frames, Spectacles, Contacts, Others " })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">@IndexResources.OrderDetailNumberOne</label>
+            </div>
+
+            <div class="form-group ">
+                <label for="Data_OrderDetailExternalId" class="col-sm-3 control-label">@IndexResources.OrderDetailID</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="Data_OrderDetailExternalId" name="Data.OrderDetails[0].OrderDetailExternalId"  value=@orderDetailExternalId>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_ProductDescription" class="col-sm-3 control-label">@IndexResources.ProductDescription</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="Data_ProductDescription" name="Data.OrderDetails[0].ProductDescription" value=@productDescription>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="Data_Quantity" class="col-sm-3 control-label">@IndexResources.Quantity</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="Data_Quantity" name="Data.OrderDetails[0].Quantity" value=@quantity>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_RetailPrice" class="col-sm-3 control-label">@IndexResources.RetailPrice</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="Data_RetailPrice" name="Data.OrderDetails[0].RetailPrice" value=@retailPrice>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_UnitPrice" class="col-sm-3 control-label">@IndexResources.UnitPrice</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="Data_UnitPrice" name="Data.OrderDetails[0].UnitPrice"  value=@unitPrice>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_Tax1" class="col-sm-3 control-label">@IndexResources.Tax1</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="Data_Tax1" name="Data.OrderDetails[0].Tax1" value=@tax1>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Data_Tax2" class="col-sm-3 control-label">@IndexResources.Tax2</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="Data_Tax2" name="Data.OrderDetails[0].Tax2"  value=@tax2>
+                </div>
+            </div>
+            <button class="btn btn-primary">@Resources.SendData</button>}
+    </div>
+</div>

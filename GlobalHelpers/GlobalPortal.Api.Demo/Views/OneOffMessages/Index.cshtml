@@ -1,0 +1,183 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<OneOffMessageModel>
+
+@using GlobalPortal.Api.Models.PatientCommunications
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.OneOffMessages
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+        {
+            <div class="row form-group">
+                <label for="resultMethod" class="col-sm-2 control-label">@IndexResources.Method</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultMethod", null, new { @class = "form-control", disabled = "disabled", id = "resultMethod", placeholder = @IndexResources.SMS })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultLocationExternalId" class="col-sm-2 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultLocationExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultPatientExternalId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultPatientExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultFrom" class="col-sm-2 control-label">@IndexResources.From</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultFrom", null, new { @class = "form-control", disabled = "disabled", id = "resultFrom" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultTo" class="col-sm-2 control-label">@IndexResources.To</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultTo", null, new { @class = "form-control", disabled = "disabled", id = "resultTo" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultMessageSubject" class="col-sm-2 control-label">@IndexResources.MessageSubject</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultMessageSubject", null, new { @class = "form-control", disabled = "disabled", id = "resultMessageSubject" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultMessageBody" class="col-sm-2 control-label">@IndexResources.MessageBody</label>
+                <div class="col-sm-8">
+                    @Html.TextArea("resultMessageBody", new { @class = "form-control", disabled = "disabled", id = "resultMessageBody" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultmethod" class="col-sm-2 control-label">@IndexResources.Method</label>
+                <div id="resultmethod" class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Method, null, new { @class = "form-control", disabled = "disabled", id = "resultmethod", placeholder = @IndexResources.SMS })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultLocationExternalId" class="col-sm-2 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultPatientExternalId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultFrom" class="col-sm-2 control-label">@IndexResources.From</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.From, null, new { @class = "form-control", disabled = "disabled", id = "resultFrom" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultTo" class="col-sm-2 control-label">@IndexResources.To</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.To, null, new { @class = "form-control", disabled = "disabled", id = "resultTo" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultMessageSubject" class="col-sm-2 control-label">@IndexResources.MessageSubject</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.MessageSubject, null, new { @class = "form-control", disabled = "disabled", id = "resultMessageSubject" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="resultMessageBody" class="col-sm-2 control-label">@IndexResources.MessageBody</label>
+                <div class="col-sm-8">
+                    @Html.TextAreaFor(m => m.Data.MessageBody, new { @class = "form-control", disabled = "disabled", id = "resultMessageBody" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "OneOffMessages", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="Data_Method" class="col-sm-2 control-label">@IndexResources.Method</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Method, null, new { @class = "form-control", placeholder = @IndexResources.SMS })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_LocationExternalId" class="col-sm-2 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_PatientExternalId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_From" class="col-sm-2 control-label">@IndexResources.From</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.From, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_To" class="col-sm-2 control-label">@IndexResources.To</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.To, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_MessageSubject" class="col-sm-2 control-label">@IndexResources.MessageSubject</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.MessageSubject, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_MessageBody" class="col-sm-2 control-label">@IndexResources.MessageBody</label>
+                <div class="col-sm-8">
+                    @Html.TextAreaFor(m => m.Data.MessageBody, new { @class = "form-control" })
+                </div>
+            </div>
+            <button class="btn btn-primary">@Resources.SendData</button>
+        }
+    </div>
+</div>
+

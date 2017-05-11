@@ -1,0 +1,62 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<AppointmentAllowedTimeInAdvanceModel>
+
+@using GlobalPortal.Api.Models.AppointmentAllowedTimeInAdvance
+@using GlobalPortal.Api.Demo.Properties
+@using GlobalPortal.Api.Demo.Views.AppointmentAllowedTimeInAdvance
+
+@{
+	ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ResultMessage != string.Empty)
+{
+	<div class="alert alert-success alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+	<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+	<div class="panel-heading">@Resources.ResultsHeader</div>
+	<div class="panel-body">
+		@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+		{
+			<div class="row form-group">
+				<label for="resultDay" class="col-sm-1 control-label">@IndexResources.Day</label>
+				<div class="col-sm-8">
+					@Html.TextBox("resultDay", null, new { @class = "form -control", disabled = "disabled", id = "resultDay" })
+				</div>
+			</div>
+		}
+		else
+		{
+			<div class="row form-group">
+				<label for="resultDay" class="col-sm-1 control-label">@IndexResources.Day</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.Days, null, new { @class = "form-control", disabled = "disabled", id = "resultDay" })
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">@Resources.AddHeader</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("Send", "AppointmentAllowedTimeInAdvance", FormMethod.Post, new { @class = "form-horizontal" }))
+			{
+			@Html.ValidationSummary(true)
+			<div class="form-group">
+				<label for="Data_Days" class="col-sm-1 control-label">@IndexResources.Day</label>
+				<div class="col-sm-8">
+					@Html.TextBoxFor(m => m.Data.Days, null, new { @class = "form-control", @type = "number" })
+				</div>
+			</div>
+			<button class="btn btn-primary">@Resources.SendData</button>
+		}
+	</div>
+</div>
+

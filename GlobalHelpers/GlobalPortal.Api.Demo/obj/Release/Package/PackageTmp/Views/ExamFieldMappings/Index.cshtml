@@ -1,0 +1,165 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<ExamFieldMappingModel>
+
+@using GlobalPortal.Api.Models.ExamFieldMappings
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.ExamFieldMappings
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Get", "ExamFieldMappings", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-1 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    <input name="id" class="form-control" type="text" value="@Model.Data.ExternalId" placeholder="@Resources.Search" />
+                </div>
+                <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+            </div>
+                <div class="row col-sm-12 visible-xs">
+                    <button class="btn btn-primary">@Resources.GetData</button>
+                </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultColumnName" class="col-sm-2 control-label">@IndexResources.ColumnName</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultColumnName", null, new { @class = "form-control", disabled = "disabled", id = "resultColumnName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDisplayName" class="col-sm-2 control-label">@IndexResources.DisplayName</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultDisplayName", null, new { @class = "form-control", disabled = "disabled", id = "resultDisplayName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDataType" class="col-sm-2 control-label">@IndexResources.DataType</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultDataType", null, new { @class = "form-control", disabled = "disabled", id = "resultDataType" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFormat" class="col-sm-2 control-label">@IndexResources.Format</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultFormat", null, new { @class = "form-control", disabled = "disabled", id = "resultFormat" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultColumnName" class="col-sm-2 control-label">@IndexResources.ColumnName</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ColumnName, null, new { @class = "form-control", disabled = "disabled", id = "resultColumnName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDisplayName" class="col-sm-2 control-label">@IndexResources.DisplayName</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.DisplayName, null, new { @class = "form-control", disabled = "disabled", id = "resultDisplayName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultDataType" class="col-sm-2 control-label">@IndexResources.DataType</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.DataType, null, new { @class = "form-control", disabled = "disabled", id = "resultDataType" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFormat" class="col-sm-2 control-label">@IndexResources.Format</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Format, null, new { @class = "form-control", disabled = "disabled", id = "resultFormat" })
+                </div>
+            </div>
+            <div class="row col-sm-12">
+                @using (Html.BeginForm("Delete", "ExamFieldMappings", FormMethod.Post))
+                {
+                    <input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+                    <button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "ExamFieldMappings", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-2 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="Data_ColumnName" class="col-sm-2 control-label">@IndexResources.ColumnName</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.ColumnName, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_DisplayName" class="col-sm-2 control-label">@IndexResources.DisplayName</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.DisplayName, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_DataType" class="col-sm-2 control-label">@IndexResources.DataType</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.DataType, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_Format" class="col-sm-2 control-label">@IndexResources.Format</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.Format, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <button class="btn btn-primary">@Resources.SendData</button>
+        }
+    </div>
+</div>
+
+
+
+

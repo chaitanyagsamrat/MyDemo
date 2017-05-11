@@ -1,0 +1,352 @@
+﻿
+@model GlobalPortal.Api.Demo.Models.GenericModel<UserModel>
+
+@using GlobalPortal.Api.Models.Users;
+@using GlobalPortal.Api.Demo.Views.Users
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+
+    var active = Model.Criteria.ContainsKey("Active") == true ? Model.Criteria["Active"] : string.Empty;
+    var username = Model.Criteria["Username"];
+    var firstName = Model.Criteria["FirstName"];
+    var lastName = Model.Criteria["LastName"];
+    
+    string emailAddress = string.Empty;
+    if (Model.Data.Contact.EmailAddresses.Count > 0)
+    {
+        var defaultEmailAddress = Model.Data.Contact.EmailAddresses.Where(e => e.Default == true).FirstOrDefault();
+        emailAddress = defaultEmailAddress!= null ? defaultEmailAddress.Address : Model.Data.Contact.EmailAddresses.FirstOrDefault().Address;
+    }
+
+    string phoneNumber = string.Empty;
+    if (Model.Data.Contact.PhoneNumbers.Count > 0)
+    {
+        var defaultPhoneNumber = Model.Data.Contact.PhoneNumbers.Where(e => e.Default == true).FirstOrDefault();
+        phoneNumber = defaultPhoneNumber != null ? defaultPhoneNumber.Number : Model.Data.Contact.PhoneNumbers.FirstOrDefault().Number;
+    }
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (!string.IsNullOrWhiteSpace(Model.ResultMessage))
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.ListEmptyMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ListEmptyMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.SearchResults</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Index", "Users", FormMethod.Get, new { @class = "form-group" }))
+        {
+            <div class="form-group">
+                <label for="username">@IndexResources.Username</label>
+                <input type="text" name="username" id="username" value="@username" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="firstName">@IndexResources.FirstName</label>
+                <input type="text" name="firstName" id="firstName" value="@firstName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="lastName">@IndexResources.LastName</label>
+                <input type="text" name="lastName" id="lastName" value="@lastName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="active">@IndexResources.Active</label>
+                <br />
+                <div class="no-padding-left">
+                    <select name="active" class="form-control">
+                        <option value="" @(String.IsNullOrEmpty(active) ? "selected" : "")>@IndexResources.All</option>
+                        <option value="true" @(active == "True" ? "selected" : "")>@IndexResources.Yes</option>
+                        <option value="false" @(active == "False" ? "selected" : "")>@IndexResources.No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">@Resources.Search</button>
+            </div>
+        }
+        
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-3">
+                    <col class="col-xs-1">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="font-size-13">@Resources.ID</th>
+                        <th class="font-size-13">@IndexResources.Username</th>
+                        <th class="font-size-13">@IndexResources.FirstName</th>
+                        <th class="font-size-13">@IndexResources.LastName</th>
+                        <th class="font-size-13">@IndexResources.Email</th>
+                        <th class="font-size-13">@IndexResources.Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults.Rows)
+                    {
+                        <tr>
+                            <td>@item.ExternalId</td>
+                            <td>@item.Username</td>
+                            <td>@item.Contact.FirstName</td>
+                            <td>@item.Contact.LastName</td>
+                            <td>
+                                @{string itemEmailAddress = string.Empty;}
+                                @if(item.Contact.EmailAddresses.Count > 0)
+                                {
+                                    var itemDefaultEmailAddress = item.Contact.EmailAddresses.Where(e => e.Default == true).FirstOrDefault();
+                                    itemEmailAddress = itemDefaultEmailAddress != null ? itemDefaultEmailAddress.Address : item.Contact.EmailAddresses.FirstOrDefault().Address;
+                                }
+                                @itemEmailAddress
+                            </td>
+                            <td>@item.Active</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.GetHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Get", "Users", FormMethod.Get, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    <input name="id" class="form-control" type="text" value="@Model.Data.ExternalId" placeholder="@Resources.Search" />
+                </div>
+                <button class="hidden-xs btn btn-primary">@Resources.GetData</button>
+            </div>
+            <div class="row col-sm-12 visible-xs">
+                <button class="btn btn-primary">@Resources.GetData</button>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage) || Model.Data.ExternalId == null)
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultId", null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultUsername" class="col-sm-3 control-label">@IndexResources.Username</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultUsername", null, new { @class = "form-control", disabled = "disabled", id = "resultUsername" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFirstName" class="col-sm-3 control-label">@IndexResources.FirstName</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultFirstName", null, new { @class = "form-control", disabled = "disabled", id = "resultFirstName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLastName" class="col-sm-3 control-label">@IndexResources.LastName</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultLastName", null, new { @class = "form-control", disabled = "disabled", id = "resultLastName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultEmailAddress" class="col-sm-3 control-label">@IndexResources.Email</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultEmailAddress", null, new { @class = "form-control", disabled = "disabled", id = "resultEmailAddress" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultPhoneNumber" class="col-sm-3 control-label">@IndexResources.PhoneNumber</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultPhoneNumber", null, new { @class = "form-control", disabled = "disabled", id = "resultPhoneNumber" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultCompanyName" class="col-sm-3 control-label">@IndexResources.CompanyName</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultCompanyName", null, new { @class = "form-control", disabled = "disabled", id = "resultCompanyName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultActive" class="col-sm-3 control-label">@IndexResources.Active</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultActive", null, new { @class = "form-control", disabled = "disabled", id = "resultActive" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultNotes" class="col-sm-3 control-label">@IndexResources.Notes</label>
+                <div class="col-sm-8">
+                    @Html.TextArea("resultNotes", null, new { @class = "form-control", disabled = "disabled", id = "resultNotes" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <label for="resultId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultUsername" class="col-sm-3 control-label">@IndexResources.Username</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m=>m.Data.Username, null, new { @class = "form-control", disabled = "disabled", id = "resultUsername" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultFirstName" class="col-sm-3 control-label">@IndexResources.FirstName</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Contact.FirstName, null, new { @class = "form-control", disabled = "disabled", id = "resultFirstName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLastName" class="col-sm-3 control-label">@IndexResources.LastName</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Contact.LastName, null, new { @class = "form-control", disabled = "disabled", id = "resultLastName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultCompanyName" class="col-sm-3 control-label">@IndexResources.CompanyName</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Contact.CompanyName, null, new { @class = "form-control", disabled = "disabled", id = "resultCompanyName" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultEmail" class="col-sm-3 control-label">@IndexResources.Email</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="resultEmail" value="@emailAddress" disabled>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultPhoneNumber" class="col-sm-3 control-label">@IndexResources.PhoneNumber</label>
+                <div class="col-sm-8">
+                   <input class="form-control" id="resultPhoneNumber" value="@phoneNumber" disabled>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultActive" class="col-sm-3 control-label">@IndexResources.ResultActive</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultActive", Model.Data.Active ? Resources.Yes : Resources.No, new { @class = "form-control", disabled = "disabled", id = "resultActive" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultNotes" class="col-sm-3 control-label">@IndexResources.Notes</label>
+                <div class="col-sm-8">
+                    @Html.TextAreaFor(m => m.Data.Notes, new { @class = "form-control", disabled = "disabled", id = "resultNotes" })
+                </div>
+            </div>
+            <div class="row col-sm-12">
+              @using (Html.BeginForm("Delete", "Users", FormMethod.Post))
+                    {
+                        <input name="id" class="form-control" type="hidden" value="@Model.Data.ExternalId" />
+                        <button class="btn btn-primary" @(Model.Data.ExternalId == null || Model.ErrorMessage != string.Empty ? "disabled" : "" )>@Resources.DeleteData</button>
+                }
+           </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "Users", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="Data_ExternalId" class="col-sm-3 control-label">@Resources.ID</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.ExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="Data_Username" class="col-sm-3 control-label">@IndexResources.Username</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Username, null, new { @class = "form-control"})
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="Data_Password" class="col-sm-3 control-label">@IndexResources.Password</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.Password, null, new { @class = "form-control", @type = "password" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="Data_PasswordConfirmation" class="col-sm-3 control-label">@IndexResources.PasswordConfirmation</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PasswordConfirmation, null, new { @class = "form-control", @type="password" })
+                </div>
+            </div>
+            <div class="form-group">
+                 <label for="Data_Contact_FirstName" class="col-sm-3 control-label">@IndexResources.FirstName</label>
+                 <div class="col-sm-8">
+                     @Html.TextBoxFor(m => m.Data.Contact.FirstName, null, new { @class = "form-control" })
+                 </div>
+            </div>
+                <div class="form-group">
+                    <label for="Data_Contact_LastName" class="col-sm-3 control-label">@IndexResources.LastName</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.Contact.LastName, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label for="Data_Contact_CompanyName" class="col-sm-3 control-label">@IndexResources.CompanyName</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Data.Contact.CompanyName, null, new { @class = "form-control"})
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label for="Data_Contact_EmailAddress" class="col-sm-3 control-label">@IndexResources.Email</label>
+                    <div class="col-sm-8">
+                        <input type="hidden" class="form-control" name="Data.Contact.EmailAddresses[0].Default" value="true">
+                        <input class="form-control" name="Data.Contact.EmailAddresses[0].Address" value="@emailAddress">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label for="Data_Contact_PhoneNumber" class="col-sm-3 control-label">@IndexResources.PhoneNumber</label>
+                    <div class="col-sm-8">
+                        <input type="hidden" class="form-control" name="Data.Contact.PhoneNumbers[0].Default" value="true">
+                        <input class="form-control" name="Data.Contact.PhoneNumbers[0].Number" value="@phoneNumber">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Data_Active" class="col-sm-3 control-label">@IndexResources.Active</label>
+                    <div class="col-sm-8">
+                        @Html.CheckBoxFor(m => m.Data.Active)
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label for="Data_Notes" class="col-sm-3 control-label">@IndexResources.Notes</label>
+                    <div class="col-sm-8">
+                        @Html.TextAreaFor(m => m.Data.Notes, new { @class = "form-control"})
+                    </div>
+                </div>
+               <button class="btn btn-primary">@Resources.SendData</button>
+        }
+    </div>
+</div>
+
+
+

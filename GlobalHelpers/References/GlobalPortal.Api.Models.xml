@@ -1,0 +1,2789 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GlobalPortal.Api.Models</name>
+    </assembly>
+    <members>
+        <member name="T:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel">
+            <summary>
+            Model used to retrieve or set accound settings.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.AccountId">
+            <summary>
+            Account's unique identifier.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.LinkedInUrl">
+            <summary>
+            LinkedIn URL for the account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.YahooUrl">
+            <summary>
+            Yahoo URL for the account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.GooglePlusUrl">
+            <summary>
+            Google+ URL for the account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.FacebookUrl">
+            <summary>
+            Facebook URL for the account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.AppointmentAllowedTimeInAdvance">
+            <summary>
+            Time span beyond which future appointments cannot be scheduled.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.UsesForms">
+            <summary>
+            Indicates whether the account uses forms or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AccountSettings.AccountSettingsModel.OnlineAppointmentsActive">
+            <summary>
+            Indicates whether or not online appointments are allowed for the account.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Accounts.NewMveAccountModel">
+            <summary>
+            Model used to create an account for an MVE customer.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountId">
+            <summary>
+            The ID of the account. This value will be supplied by Eye Reach Patients.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountNumber">
+            <summary>
+            The number of the account. This value will be supplied by Eye Reach Patients.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountName">
+            <summary>
+            The name of the account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountOwnerExternalId">
+            <summary>
+            Unique ID of the account owner on integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountOwnerFirstName">
+            <summary>
+            First name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountOwnerMiddleName">
+            <summary>
+            Middle name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountOwnerLastName">
+            <summary>
+            Last name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.Username">
+            <summary>
+            User name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.Password">
+            <summary>
+            Password of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.AccountOwnerEmailAddress">
+            <summary>
+            AccountOwner's email address of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewMveAccountModel.PartnerKey">
+            <summary>
+            Key of the Partner.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Accounts.NewAccountModel">
+            <summary>
+            Model used to create an account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.AccountName">
+            <summary>
+            The name of the account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.AccountOwnerExternalId">
+            <summary>
+            Unique ID of the account owner on integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.AccountOwnerFirstName">
+            <summary>
+            First name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.AccountOwnerMiddleName">
+            <summary>
+            Middle name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.AccountOwnerLastName">
+            <summary>
+            Last name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.Username">
+            <summary>
+            User name of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.Password">
+            <summary>
+            Password of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.AccountOwnerEmailAddress">
+            <summary>
+            AccountOwner's email address of the account owner.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountModel.PartnerKey">
+            <summary>
+            Key of the Partner.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Accounts.NewAccountResultModel">
+            <summary>
+            Model used to retrieve information about a new account.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountResultModel.AccountId">
+            <summary>
+            The ID of the account. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountResultModel.AccountNumber">
+            <summary>
+            Number of the account. This number must be used later as part of the URL to access the web interface of the application.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountResultModel.SynchronizationUserName">
+            <summary>
+            Synchronization user name 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Accounts.NewAccountResultModel.SynchronizationPassword">
+             <summary>
+            Synchronization password.
+             </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Allergies.AllergyModel">
+            <summary>
+            Model used to create or retrieve an allergy configuration.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Allergies.AllergyModel.Allergy">
+            <summary>
+            The name of a drug or environmental (other) factor to which a patient is allergic. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Allergies.AllergyModel.Type">
+            <summary>
+            The type of allergy ("drug" or "other") (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Allergies.AllergyModel.Reaction">
+            <summary>
+            Allergic reaction.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentAllowedTimeInAdvance.AppointmentAllowedTimeInAdvanceModel">
+            <summary>
+            Model used to set the time span (in days) beyond which future appointments cannot be scheduled.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentAllowedTimeInAdvance.AppointmentAllowedTimeInAdvanceModel.Days">
+            <summary>
+            The time span (in days) beyond which future appointments cannot be scheduled.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentCancelRequests.AppointmentCancelRequestModel">
+            <summary>
+            Model used to retrieve information about a appointment cancellation request.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentCancelRequests.AppointmentCancelRequestModel.AppointmentCancelRequestID">
+            <summary>
+            Unique ID of the appointment on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentCancelRequests.AppointmentCancelRequestModel.CancelReason">
+            <summary>
+            Reason for appointment cancellation request.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentCancelRequests.AppointmentCancelRequestModel.AppointmentExternalID">
+            <summary>
+            Unique ID of the appointment on integrating system.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel">
+            <summary>
+            Model used to retrieve or set information about an appointment request reason.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.InternalId">
+            <summary>
+            ID of the appointment request reason.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.AccountId">
+            <summary>
+            Account's unique identifier.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.Name">
+            <summary>
+            Name of appointment request reason.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.AppliesToNewPatients">
+            <summary>
+            Indicates whether the appointment request reason applies to new patient or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.AppliesToExistentPatients">
+            <summary>
+            Indicates whether the appointment request reason applies to existen patient or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.IsLogicalDeleted">
+            <summary>
+            Indicates whether the appointment request reason is logical deleted or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.SlotDuration">
+            <summary>
+            Estimated time for an appointment with this reason.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.Changed">
+            <summary>
+            Result of reason whether changed or no.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.Active">
+            <summary>
+            Indicates whether the appointment request reason is active or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonModel.LastChanged">
+            <summary>
+            Timestamp value of the last modification.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonReceivedModel">
+            <summary>
+            Model used to set an appointment request reasons as changed to the integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonReceivedModel.InternalID">
+            <summary>
+            ID of object to be marked as received (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonReceivedModel.Success">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonReceivedModel.ResultMessage">
+            <summary>
+            Result message.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestReasons.AppointmentRequestReasonReceivedModel.LastChanged">
+            <summary>
+            Timestamp value of the last modification.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel">
+            <summary>
+            Model used to retrieve or set information about a appointment request.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel.InternalID">
+            <summary>
+            Request's unique ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel.Approved">
+            <summary>
+            Result of request whether approved or denied.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel.InternalIDString">
+            <summary>
+            Result's unique ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel.ObjectType">
+            <summary>
+            Object type is Appointment request or Appointment cancel request .
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel.ResultMessage">
+            <summary>
+            Result message.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequestResults.AppointmentRequestResultModel.ErrorMessage">
+            <summary>
+            Error message.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel">
+            <summary>
+            Model used to retrieve or set information about an appointment request.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.AppointmentRequestID">
+            <summary>
+            ID of the appointment request.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.HasEyeExamAtThisLocation">
+            <summary>
+            Indicates whether the location has eye exam or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.VisionInsuranceCarrier">
+            <summary>
+            Vision Insurance Carrier.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.VisionGroupNumber">
+            <summary>
+            Vision group number.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.VisionPolicyNumber">
+            <summary>
+            Vision policy number.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.MedicalInsuranceCarrier">
+            <summary>
+            Medical insurance carrier.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.MedicalGroupNumber">
+            <summary>
+            Medical group number.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.MedicalPolicyNumber">
+            <summary>
+            Medical policy number.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.RequestedDate">
+            <summary>
+            Requested Date of the appointment request.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.Comments">
+            <summary>
+            Comments.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.PatientEmailAddress">
+            <summary>
+            Patient email address
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.PhoneNumberType">
+            <summary>
+            Phone number type.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.PhoneNumber">
+            <summary>
+            Phone number.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.Status">
+            <summary>
+            Status should be (PendingForApproval = 0, Approved = 1, Denied = 2).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.AppointmentRequestReasonId">
+            <summary>
+            Appointment request reason ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.CountryId">
+            <summary>
+            Country ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.AppointmentExternalId">
+            <summary>
+            Appointment external ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.DoctorExternalId">
+            <summary>
+            Doctor external ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.AppointmentRequestModel.LocationExternalId">
+            <summary>
+            Location External ID.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentRequests.PatientAppointmentRequestModel">
+            <summary>
+            Model used to retrieve information about a patient appointment request.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.PatientAppointmentRequestModel.IsPortalPatient">
+            <summary>
+            Indicates whether the patient is  portal patient or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.PatientAppointmentRequestModel.PatientExternalId">
+            <summary>
+            External ID of the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentRequests.PatientAppointmentRequestModel.PortalPatient">
+            <summary>
+            Model used for a portal patient.
+            </summary>
+        </member>
+        <member name="F:GlobalPortal.Api.Models.AppointmentRequests.PatientAppointmentRequestModel.AppointmentRequestList">
+            <summary>
+            List of appointment request.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentStatuses.AppointmentStatusModel">
+            <summary>
+            Model used to retrieve or set information about an appointment status.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentStatuses.AppointmentStatusModel.Name">
+            <summary>
+            Name of the appointment status (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentStatuses.AppointmentStatusModel.IsCanceled">
+            <summary>
+            Indicates whether the appointment status is canceled or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentStatuses.AppointmentStatusModel.IsRescheduled">
+            <summary>
+            Indicates whether the appointment status is rescheduled or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentStatuses.AppointmentStatusModel.IsConfirmed">
+            <summary>
+            Indicates whether the appointment status is confirmed or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentStatuses.AppointmentStatusModel.IsCheckedOut">
+            <summary>
+            Indicates whether the appointment status is checked out or not.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel">
+            <summary>
+            Model used to retrieve or set information about an appointment.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel.LocationExternalId">
+            <summary>
+            Location's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel.DoctorExternalId">
+            <summary>
+            Doctor's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel.PatientExternalId">
+            <summary>
+            Patient's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel.AppointmentStatusExternalId">
+            <summary>
+            Appointment status' unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel.CancelReason">
+            <summary>
+            Appointment cancellation reason.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel.Start">
+            <summary>
+            Date and time of the appointment.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentsModel.AppointmentModel.End">
+            <summary>
+            Date and time when the appointment ends.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.AppointmentUpdates.AppointmentUpdateModel">
+            <summary>
+            Model used to retrieve information about appointment changes made through communications.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentUpdates.AppointmentUpdateModel.AppointmentUpdateID">
+            <summary>
+            Unique ID of the model. ID belongs to the appoinment.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentUpdates.AppointmentUpdateModel.AppointmentExternalID">
+            <summary>
+            Appointment's unique ID on integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentUpdates.AppointmentUpdateModel.UpdateStatusTo">
+            <summary>
+            Status of the appointment updated request. The possible values are: 'Canceled', 'Confirmed', 'LeftMessage' (only for voice), 'UnableToReach' (only for voice)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.AppointmentUpdates.AppointmentUpdateModel.Method">
+            <summary>
+            Communication method of the appointment updated request. Possible values are: 'Email', 'Sms', 'Voice'.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.ClientAuthentication.TokenResponseModel">
+            <summary>
+            Model used to retrieve an authentication token.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ClientAuthentication.TokenResponseModel.AccessToken">
+            <summary>
+            Authentication token.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ClientAuthentication.TokenResponseModel.TokenType">
+            <summary>
+            Token type.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ClientAuthentication.TokenResponseModel.ExpiresIn">
+            <summary>
+            Number of seconds until the token expires.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Contacts.ContactModel">
+            <summary>
+            Model used to retrieve or set information about a contact.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.Id">
+            <summary>
+            Contact ID (Readonly).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.FirstName">
+            <summary>
+            Contact's first name (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.MiddleName">
+            <summary>
+            Contact's middle name.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.LastName">
+             <summary>
+            Contact's  last name (Required).
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.Suffix">
+            <summary>
+            Contact's suffix.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.Prefix">
+            <summary>
+            Contact's prefix.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.FullName">
+            <summary>
+            Contact's  full name.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.CompanyName">
+            <summary>
+            Contact's company name.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.JobTitle">
+            <summary>
+            Contact's job title.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.EmailAddresses">
+            <summary>
+            Contact's email address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.PhoneNumbers">
+            <summary>
+            Contact's phone numbers.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.PostalAddresses">
+            <summary>
+            Contact's postal address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.ContactModel.Notes">
+            <summary>
+            Contact's notes.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Contacts.EmailAddressModel">
+            <summary>
+            Model used to retrieve or set information about an email address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.EmailAddressModel.Id">
+            <summary>
+            Email address ID (Readonly)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.EmailAddressModel.Alias">
+            <summary>
+            Alias of the email address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.EmailAddressModel.Address">
+            <summary>
+            Address of the email (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.EmailAddressModel.Default">
+            <summary>
+            Indicates whether this is the default email address for the contact.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.EmailAddressModel.SortOrder">
+            <summary>
+            Sort order (Readonly)
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Contacts.IMAddressModel">
+            <summary>
+            Model used to retrieve or set information about an IMAddress.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.IMAddressModel.Name">
+            <summary>
+            IMAddress's name.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.IMAddressModel.Address">
+            <summary>
+            IMAddress's address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.IMAddressModel.Default">
+            <summary>
+            Indicates whether the IMAddress is default or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.IMAddressModel.SortOrder">
+            <summary>
+            IMAddress's sort order.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Contacts.PhoneNumberModel">
+            <summary>
+            Model used to retrieve or set information about an phone number.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PhoneNumberModel.Id">
+            <summary>
+            Phone number ID (Readonly)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PhoneNumberModel.Alias">
+            <summary>
+            Alias of the phone number
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PhoneNumberModel.Number">
+            <summary>
+            Number (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PhoneNumberModel.Default">
+            <summary>
+            Indicates whether this is the default phone number for the contact.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PhoneNumberModel.UseForSms">
+            <summary>
+            Indicates whether the phone number can be used to send text messages (SMS).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PhoneNumberModel.SortOrder">
+            <summary>
+            Sort order (Readonly)
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Contacts.PostalAddressModel">
+            <summary>
+            Model used to retrieve or set information about a postal address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.Id">
+            <summary>
+            Postal Address ID (Readonly)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.Alias">
+            <summary>
+            Alias of the postal address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.Address1">
+            <summary>
+            Address1 (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.Address2">
+            <summary>
+            Address2.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.City">
+            <summary>
+            City (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.State">
+            <summary>
+            State (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.CountryId">
+            <summary>
+            Country ID (Readonly)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.CountryCode">
+            <summary>
+            Country Code (Readonly)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.CountryName">
+            <summary>
+            Country Name (Readonly)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.Zip">
+            <summary>
+            Zip code (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.PostalAddressModel.Default">
+            <summary>
+            Indicates whether this is the default address of the contact.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Contacts.WebAddressModel">
+            <summary>
+            Model used to retrieve or set information about a web address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.WebAddressModel.Name">
+            <summary>
+            Name of the web address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.WebAddressModel.Address">
+            <summary>
+            Address of the web.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.WebAddressModel.Default">
+            <summary>
+            Indicates whether the web address is default or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Contacts.WebAddressModel.SortOrder">
+            <summary>
+            Sort order of the web address.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel">
+            <summary>
+            Model used to retrieve or set information about a doctor availability slot.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.Notes">
+            <summary>
+            The reason why a doctor is unavailable.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.LocationExternalId">
+            <summary>
+            Location's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.DoctorExternalId">
+            <summary>
+            Doctor's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.Available">
+            <summary>
+            Indicates whether the doctor is available or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.AppointmentRequestReasonId">
+            <summary>
+            Indicates whether the doctor has an appointment request reason or not..
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.DoctorAvailabilityDates">
+            <summary>
+            List of doctor availability dates in doctor availability slot model.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.DoctorAvailabilityDate">
+            <summary>
+            Model used to set information about a doctor availability dates.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.DoctorAvailabilityDate.Start">
+            <summary>
+            Doctor availability slot starting date.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DoctorAvailabilitySlots.DoctorAvailabilitySlotModel.DoctorAvailabilityDate.End">
+            <summary>
+            Doctor availability slot ending date.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.DosageForms.DosageFormModel">
+            <summary>
+            Model used to retrieve or set information about a dosage form.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DosageForms.DosageFormModel.Name">
+            <summary>
+            Name of dosage form (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.DosageForms.DosageFormModel.SortOrder">
+            <summary>
+            Indicates the sort order of this dosage form in the list.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.ExamFieldMappingDetails.ExamFieldMappingDetailModel">
+            <summary>
+            Model used to retrieve or set information about an exam field mapping detail.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExamFieldMappingDetails.ExamFieldMappingDetailModel.ColumnName">
+            <summary>
+            Column Name of the exam field mapping detail (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExamFieldMappingDetails.ExamFieldMappingDetailModel.ListValue">
+            <summary>
+            List values of the exam field mapping detail (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExamFieldMappingDetails.ExamFieldMappingDetailModel.SortOrder">
+            <summary>
+            Sort order of the exam field mapping detail (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.ExamFieldMappings.ExamFieldMappingModel">
+            <summary>
+            Model used to retrieve or set information about an exam field mappings.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExamFieldMappings.ExamFieldMappingModel.ColumnName">
+            <summary>
+            check (Required)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExamFieldMappings.ExamFieldMappingModel.DisplayName">
+            <summary>
+            check (Required)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExamFieldMappings.ExamFieldMappingModel.DataType">
+            <summary>
+            check (Required)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExamFieldMappings.ExamFieldMappingModel.Format">
+            <summary>
+            check 
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Exams.ExamModel">
+            <summary>
+            Model used to retrieve or set information about an exam.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Exams.ExamModel.PatientExternalID">
+            <summary>
+            Patient number of the exam (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Exams.ExamModel.Date">
+            <summary>
+            Date of the exam (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ExternalModel.ExternalId">
+            <summary>
+            Unique ID of the model on integrating system (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.FamilyHistories.FamilyHistoryModel">
+            <summary>
+             Model used to retrieve or set information about a family history.
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyHistories.FamilyHistoryModel.Disease">
+            <summary>
+            Indicates disease name of the family history (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyHistories.FamilyHistoryModel.IsDefault">
+            <summary>
+            Indicates whether this family history is default or not (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyHistories.FamilyHistoryModel.SortOrder">
+            <summary>
+            Indicates the sort order of this family history in the list (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.FamilyMembers.FamilyMemberModel">
+            <summary>
+            Model used to set information about a family member.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyMembers.FamilyMemberModel.PatientExternalId">
+            <summary>
+            Patient's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyMembers.FamilyMemberModel.RelativeExternalId">
+            <summary>
+            Relative's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.FamilyRelationships.FamilyRelationshipModel">
+            <summary>
+            Model used to retrieve or set information about a family relationship.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyRelationships.FamilyRelationshipModel.Name">
+            <summary>
+            Name of the family relationship (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyRelationships.FamilyRelationshipModel.SortOrder">
+            <summary>
+            Sort order of the family relationship.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.FamilyRelationships.FamilyRelationshipModel.IsDefault">
+            <summary>
+            Indicates whether the family relationship is default or not.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.AnswerOptionOfClosedFormQuestionModel">
+            <summary>
+            Model used to retrieve information about a closed answer options of closed form question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.AnswerOptionOfClosedFormQuestionModel.Category">
+            <summary>
+            Category of answer option
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.AnswerOptionOfClosedFormQuestionModel.Name">
+            <summary>
+            Name of answer option
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.AnswerOptionOfClosedFormQuestionModel.ClosedFormQuestionId">
+            <summary>
+            Closed form question ID
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.AnswerOptionOfClosedFormQuestionModel.AnswerOptionId">
+            <summary>
+            Answer option ID
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.AnswerOptionOfClosedFormQuestionModel.SortOrder">
+            <summary>
+            Sort order
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.AnswerOptionOfOpenFormQuestionModel">
+            <summary>
+            Model used to retrieve or set information about a answer option of open form question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.AnswerOptionOfOpenFormQuestionModel.Category">
+            <summary>
+            Category of answer option
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.AnswerOptionOfOpenFormQuestionModel.Name">
+            <summary>
+            Name of answer option
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.ClosedFormModel">
+            <summary>
+            Model used to retrieve information about a closed form.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.DateCompleted">
+            <summary>
+            Indicates completed date of a closed form
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.DateClosed">
+            <summary>
+            Indicates closed date of a closed form
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.FormLayoutDescription">
+            <summary>
+            Description of the from layout
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.PatientInternalId">
+            <summary>
+            Patient's unique ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.CancellationDate">
+            <summary>
+            Indicates cancellation date of a closed form
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.CancellationNotes">
+            <summary>
+            Indicates cancellation notes of a closed form
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.CancelledByUserFullName">
+            <summary>
+            Full name of the user that cancel the form
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.ClosedFormQuestions">
+            <summary>
+            List of closed form's questions
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.ClosedFormSections">
+            <summary>
+            List of closed form's sections 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.EhrProfileLastUpdate">
+            <summary>
+            Indicates date of last profile update on integrating system
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.EhrInsuranceLastUpdate">
+            <summary>
+            Indicates date of last insurance update on integrating system
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.EhrExamLastUpdate">
+            <summary>
+            Indicates date of last exam update on integrating system
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormModel.IsPortalPatient">
+            <summary>
+            Indicates if this form belongs to a Patient or a PortalPatient 
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel">
+            <summary>
+            Model used to retrieve information about a closed form question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.SystemDefined">
+            <summary>
+            Indicates if a question is  whether sytem question or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.Label">
+            <summary>
+            Text of question's label.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.Hint">
+            <summary>
+            Label's hint.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.QuestionItemName">
+            <summary>
+            Indicates name of the item in a question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.QuestionItemGroupName">
+            <summary>
+            Indicates name of the group items in a question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.AnswerRequired">
+            <summary>
+            Indicates if answer is required for a question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.TextAnswer">
+            <summary>
+            Text of answer for a question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.AnswerOptionOfClosedFormQuestions">
+            <summary>
+            List of answer options for a closed form's questions
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.ClosedFormQuestionId">
+            <summary>
+            Closed form question ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.ClosedFormSectionId">
+            <summary>
+            Closed form section ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.SortOrder">
+            <summary>
+            Sort order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.QuestionItemId">
+            <summary>
+            Question item ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.QuestionItemGroupId">
+            <summary>
+            Question item group ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.QuestionItemGroupAnswerIndex">
+            <summary>
+            Question item group answer index.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.DateAnswer">
+            <summary>
+            Date answer.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.QuestionItemAnswerType">
+            <summary>
+            Question item answer type.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormQuestionModel.SelectOneAnswerValue">
+            <summary>
+            Select one answer value.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.ClosedFormSectionModel">
+            <summary>
+            Model used to retrieve information about a  closed form section.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormSectionModel.LabelText">
+            <summary>
+            Label's text of closed form section.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormSectionModel.DescriptionText">
+            <summary>
+            Description's text of closed form section.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormSectionModel.SortOrder">
+            <summary>
+            Sort order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.ClosedFormSectionModel.ClosedFormSectionId">
+            <summary>
+            Closed form section ID.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.FormModel">
+            <summary>
+            Model used to retrieve or set information about an form.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.FormModel.ID">
+            <summary>
+            Unique ID of the model.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.FormModel.FormLayoutName">
+            <summary>
+            Form layout name, it can be form's name.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.FormModel.PatientExternalId">
+            <summary>
+            Patient's unique ID on integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.FormModel.PatientFullName">
+            <summary>
+            Patient's name, it's composed by: first name, last name and middle name.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.FormModel.Status">
+            <summary>
+            Form's current status, it can be open, completed, closed, cancelled. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.FormModel.CreationDate">
+            <summary>
+            Form's creation date. 
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.FormToBeClosedModel">
+            <summary>
+            Model used to retrieve or set information about an form.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.FormToBeClosedModel.ID">
+            <summary>
+            Unique ID of the model (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.OpenFormModel">
+            <summary>
+            Model used to retrieve or set information about a  open form.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormModel.OpenFormQuestions">
+            <summary>
+            List of open form's questions 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormModel.OpenFormSections">
+            <summary>
+            List of open form's sections 
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel">
+            <summary>
+            Model used to retrieve or set information about a  open form question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.Type">
+            <summary>
+            Type of form component(Section = 0, Question = 1).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.Label">
+            <summary>
+            Label of open form question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.Hint">
+            <summary>
+            Hint of open form question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.QuestionItemName">
+            <summary>
+            Indicates name of the item in a question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.QuestionItemGroupName">
+            <summary>
+            Indicates name of the group items in a question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.QuestionItemAnswerType">
+            <summary>
+            Type of answer. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.TextAnswer">
+            <summary>
+            Text of answer for a question.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.BooleanAnswer">
+            <summary>
+            Indicates if the answer is boolean or not. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.DateAnswer">
+            <summary>
+            Date of the answer. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormQuestionModel.AnswerOptionOfOpenFormQuestions">
+            <summary>
+            List of answer options for a open form's questions
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Forms.OpenFormSectionModel">
+            <summary>
+            Model used to retrieve or set information about a  open form section.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormSectionModel.LabelText">
+            <summary>
+            Label's text of open form section.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormSectionModel.Type">
+            <summary>
+            Type of form component(Section = 0, Question = 1).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Forms.OpenFormSectionModel.DescriptionText">
+            <summary>
+            Description's text of open form section.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.HealthReviews.HealthReviewModel">
+            <summary>
+            Model used to retrieve or set information about a health review.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.HealthReviews.HealthReviewModel.Name">
+            <summary>
+            Name of the health review (Required). 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.HealthReviews.HealthReviewModel.Category">
+            <summary>
+            Health review category (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.HealthReviews.HealthReviewModel.IsDefault">
+            <summary>
+            Indicates whether this health review is default or not (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.HealthReviews.HealthReviewModel.SortOrder">
+            <summary>
+            Indicates the sort order of this health review in the list (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Hl7CDAs.Hl7CDAModel">
+            <summary>
+            Model used set information about a  Hl7CDA.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Hl7CDAs.Hl7CDAModel.CDAXml">
+            <summary>
+            CHECK.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Hl7CDAs.Hl7CDAModel.PatientExternalId">
+            <summary>
+            Patient's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Hl7CDAs.Hl7CDAModel.LocationExternalId">
+            <summary>
+            Location's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Insurances.InsuranceModel">
+            <summary>
+            Model used to retrieve or set information about an insurance.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Insurances.InsuranceModel.CompanyName">
+            <summary>
+            Company name of the insurance (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Insurances.InsuranceModel.Active">
+            <summary>
+            Indicates whether the insurance is active or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Insurances.InsuranceModel.InsuranceType">
+            <summary>
+            Type of the insurance (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.ListModel`1">
+            <summary>
+            Returns information about lists of different models.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ListModel`1.TotalItems">
+            <summary>
+            Total items.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ListModel`1.ItemsPerPage">
+            <summary>
+            Items per page.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ListModel`1.CurrentPage">
+            <summary>
+            Current page.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ListModel`1.TotalPages">
+            <summary>
+            Total pages.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ListModel`1.FirstRowOnPage">
+            <summary>
+            First row on page.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ListModel`1.LastRowOnPage">
+            <summary>
+            Last row on page
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ListModel`1.Rows">
+            <summary>
+            List of models
+            </summary>
+        </member>
+        <member name="M:GlobalPortal.Api.Models.ListModel`1.#ctor">
+            <summary>
+            Object constructor
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Locations.LocationModel">
+            <summary>
+            Model used to retrieve or set information about a location.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.Name">
+            <summary>
+            Name of the location (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.Active">
+            <summary>
+            Indicates whether the location is active or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.Notes">
+            <summary>
+            Notes about the location.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.SundayClosed">
+            <summary>
+            Indicates whether the location is closed on Sundays.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.SundayFrom">
+            <summary>
+            Sundays open time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.SundayTo">
+            <summary>
+            Sundays close time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.MondayClosed">
+            <summary>
+            Indicates whether the location is closed on Mondays.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.MondayFrom">
+            <summary>
+            Mondays open time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.MondayTo">
+            <summary>
+            Mondays close time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.TuesdayClosed">
+            <summary>
+            Indicates whether the location is closed on Tuesdays.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.TuesdayFrom">
+            <summary>
+            Tuesdays open time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.TuesdayTo">
+            <summary>
+            Tuesdays close time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.WednesdayClosed">
+            <summary>
+            Indicates whether the location is closed on Wednesdays.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.WednesdayFrom">
+            <summary>
+            Wednesdays open time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.WednesdayTo">
+            <summary>
+            Wednesdays close time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.ThursdayClosed">
+            <summary>
+            Indicates whether the location is closed on Thursdays.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.ThursdayFrom">
+            <summary>
+            Thursdays open time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.ThursdayTo">
+            <summary>
+            Thursdays close time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.FridayClosed">
+            <summary>
+            Indicates whether the location is closed on Fridays.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.FridayFrom">
+            <summary>
+            Fridays open time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.FridayTo">
+            <summary>
+            Fridays close time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.SaturdayClosed">
+            <summary>
+            Indicates whether the location is closed on Saturdays.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.SaturdayFrom">
+            <summary>
+            Saturdays open time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.SaturdayTo">
+            <summary>
+            Saturdays close time.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.RequestFormLayoutAfterOnlineAppointment">
+            <summary>
+            Whether the patient should receive a request to fill out a medical form after creating an online appointment.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.ComunicationSendingFromHour">
+            <summary>
+            Deprecated, must use CommunicationSendingFromHour.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.CommunicationSendingFromHour">
+            <summary>
+            Appropriated time to start sending communications to the patients.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.ComunicationSendingToHour">
+            <summary>
+            Deprecated, must use CommunicationSendingToHour.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.CommunicationSendingToHour">
+            <summary>
+            Time to stop communications to the patients.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.LinkedInUrl">
+            <summary>
+            Location's LinkedIn URL.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.FacebookUrl">
+            <summary>
+            Location's Facebook URL.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.GooglePlusUrl">
+            <summary>
+            Location's Google+ URL.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.YahooUrl">
+            <summary>
+            Location's Yahoo URL.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.TimeZoneId">
+            <summary>
+            Time Zone ID of the location. Check the complete list of IDs in the appendix "Time Zone IDs" (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Locations.LocationModel.Contact">
+            <summary>
+            Location's contact information.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.MarkAsReceived.MarkAsReceivedModel">
+            <summary>
+            Model used to mark as received an appointment cancellation request or an appointment request or a patient communication.
+            Mark as received any of the following objects:
+            -appointment cancellation request
+            -appointment request
+            -patient communication
+            -order update.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MarkAsReceived.MarkAsReceivedModel.InternalID">
+            <summary>
+            ID of object to be marked as received (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MarkAsReceived.MarkAsReceivedModel.Success">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MarkAsReceived.MarkAsReceivedModel.ResultMessage">
+            <summary>
+            Result message.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureModel">
+            <summary>
+            Model used to retrieve information about a meaningful use.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureModel.Measure">
+            <summary>
+            Check Measure's type, it can be Measure7 or Measure17.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureModel.ReportingPeriodStart">
+            <summary>
+            Reporting period start date.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureModel.ReportingPeriodEnd">
+            <summary>
+            Reporting period end date.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureModel.Patients">
+            <summary>
+            Patient's list. 
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel">
+            <summary>
+            Model used to retrieve information about a measure result use.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.MeasureId">
+            <summary>
+            Measure's ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.Numerator">
+            <summary>
+            Measure's numerator.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.NumeratorIds">
+            <summary>
+            Numerator ID's list.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.Denominator">
+            <summary>
+            Measure's denominator.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.Objective">
+            <summary>
+            Objective measures.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.Threshold">
+            <summary>
+            Threshold measures. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.Exclusions">
+            <summary>
+            Exclusions measures list.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MeaningfulUses.MeaningfulUseCoreMeasureResultModel.Passed">
+            <summary>
+            Passed measures.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Medications.MedicationModel">
+            <summary>
+            Model used to retrieve or set information about a medication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Medications.MedicationModel.Medication">
+            <summary>
+            Name of the medication (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.MergePatients.MergePatientModel">
+            <summary>
+            Model to be used to get or set Patient Ids for merging process.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MergePatients.MergePatientModel.MergePatientId">
+            <summary>
+            Gets or sets the Patient Id to be merged.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MergePatients.MergePatientModel.ToPatientId">
+            <summary>
+            Gets or sets the Patient Id where other patient's details will be merged.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MergePatients.MergePatientModel.Success">
+            <summary>
+            Gets or sets the success status.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.MergePatients.MergePatientModel.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.OrderStatuses.OrderStatusModel">
+            <summary>
+            Model used to retrieve or set information about a order status.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.OrderStatuses.OrderStatusModel.Name">
+            <summary>
+            Order status' name (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.OrderStatuses.OrderStatusModel.Active">
+            <summary>
+            Indicates whether the order status is active or not.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Orders.OrderDetailModel">
+            <summary>
+            Model used to retrieve or set information about an order detail.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderDetailModel.OrderDetailExternalId">
+            <summary>
+            Unique ID of the model on integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderDetailModel.ProductDescription">
+            <summary>
+            Product description of the order detail.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderDetailModel.Quantity">
+            <summary>
+            Quantity of the order detail.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderDetailModel.RetailPrice">
+            <summary>
+            Retail price of the order detail.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderDetailModel.UnitPrice">
+            <summary>
+            Unit price of the order detail.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderDetailModel.Tax1">
+            <summary>
+            Tax1 of the order detail.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderDetailModel.Tax2">
+            <summary>
+            Tax2 of the order detail.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Orders.OrderModel">
+            <summary>
+            Model used to retrieve or set information about an order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.Created">
+            <summary>
+            Creation Date of the order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.PickupDate">
+            <summary>
+            This is the date in which the patient picked up the order from the office. It may be null if the order is still in the office.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.PatientExternalId">
+            <summary>
+            ID of the patient in the integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.LocationExternalId">
+            <summary>
+            ID of the location in the integrating system (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.PhysicianExternalId">
+            <summary>
+            ID of the physician in the integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.UserExternalId">
+            <summary>
+            ID in the integrating system of the user that created the order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.OrderStatusExternalId">
+            <summary>
+            ID in the integrating system of the order status assigned to the order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.OrderBalance">
+            <summary>
+            Balance of the order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.PatientBalance">
+            <summary>
+            Balance of the order that must be paid by the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.ReceiptNote">
+            <summary>
+            Receipt note of the order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.Type">
+            <summary>
+            Eyewear type of the order: Frames, Spectacles, Contacts or Others.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Orders.OrderModel.OrderDetails">
+            <summary>
+            List of the order details.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.OrderUpdates.OrderUpdateModel">
+            <summary>
+            Model used to retrieve information about a order update.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.OrderUpdates.OrderUpdateModel.OrderUpdateID">
+            <summary>
+            Unique ID of the model. ID belongs to the order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.OrderUpdates.OrderUpdateModel.OrderExternalID">
+            <summary>
+            Order's unique ID on integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.OrderUpdates.OrderUpdateModel.UpdateStatusTo">
+            <summary>
+            External ID of the order status that must be set to the order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.OrderUpdates.OrderUpdateModel.Method">
+            <summary>
+            Communication method for order update  .
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel">
+            <summary>
+            Provide data necessary to send one-off patient communications.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel.Method">
+            <summary>
+            Indicates the method (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel.LocationExternalId">
+            <summary>
+            Location's unique ID on integrating system belonging to the patient communication (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel.PatientExternalId">
+            <summary>
+            Patient's unique ID on integrating system belonging to the patient communication (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel.From">
+            <summary>
+            Indicates the source of the patient communication (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel.To">
+            <summary>
+            Indicates the target of the patient communication (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel.MessageSubject">
+            <summary>
+            Indicates the message subject of the patient communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageModel.MessageBody">
+            <summary>
+            Indicates the message body of the patient communication (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel">
+            <summary>
+            Model used to retrieve information about a patient communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.PatientCommunicationID">
+            <summary>
+            Patient communication Id.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.AccountName">
+            <summary>
+            Account name of the patient communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.Created">
+            <summary>
+            Indicates when the patient communication was created.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.CreatedUtc">
+            <summary>
+            Date and time in which the communication was created (UTC)
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.Method">
+             <summary>
+            Indicates the communication method.
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.Type">
+             <summary>
+            Indicates the communication type.
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.Status">
+             <summary>
+            Indicates current Status of patient communication.
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.AllowToCancelAppointmentsDuringCommunications">
+            <summary>
+            Indicates whether the patient will be allowed to cancel the related appointments.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.From">
+            <summary>
+            Indicates the source of the patient communication (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.To">
+            <summary>
+            Recipient of the communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.MessageSubject">
+            <summary>
+            Indicates the message subject of the patient communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.MessageBody">
+            <summary>
+            Indicates the message body of the patient communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.MessageVoiceHuman">
+            <summary>
+            Reserved for future use.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.MessageVoiceMachine">
+            <summary>
+            Reserved for future use.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.Outgoing">
+            <summary>
+            Indicates whether the patient communication is outgoing or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.LocationPhoneNumber">
+            <summary>
+            Indicates the location phone number of the patient communication..
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.PatientExternalId">
+            <summary>
+            Patient's unique ID on integrating system belonging to the patient communication (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.EyewearReadySetToStatusId">
+            <summary>
+            For eyewear ready communications, this is the order status's unique ID in our system that must be set to the related order.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.AppointmentStatusExternalId">
+            <summary>
+            Appointment status's unique ID on integrating system belonging to the patient communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.AlreadySent">
+            <summary>
+            Indicates whether the patient communication is already sent.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.PatientCommunicationModel.AppointmentExternalId">
+            <summary>
+            Appointment's unique ID on integrating system belonging to the Appointment.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageResponseModel">
+            <summary>
+            Model used like parameters to send patient communication.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageResponseModel.PatientCommunicationId">
+             <summary>
+            Patient communication's unique ID in our system.
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientCommunications.OneOffMessageResponseModel.Success">
+            <summary>
+            Indicates whether the patient communication was success or not.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.PatientRelationships.PatientRelationshipModel">
+            <summary>
+            Model used to retrieve or set information about a patient relationship.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientRelationships.PatientRelationshipModel.Name">
+            <summary>
+            Name of the relationship.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientRelationships.PatientRelationshipModel.SortOrder">
+            <summary>
+            Indicates the sort order of this patient relationship in the list.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientRelationships.PatientRelationshipModel.IsDefault">
+            <summary>
+            Indicates if this relationship is the default or not.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Patients.PatientModel">
+            <summary>
+            Model used to retrieve or set information about a patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Username">
+            <summary>
+            Username of the patient (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Password">
+            <summary>
+            Password of the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Representative">
+            <summary>
+            Data of the patient representative.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Birthday">
+            <summary>
+            Birthday of the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.ContactLensesReorderDate">
+             <summary>
+            Date in which the patient must reorder contact lenses (used in the Reorder Contact Lenses communication).
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.ContactLensesReorderName">
+            <summary>
+            check Contact lenses reorder name of the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.RecallDate1">
+            <summary>
+            Recall date 1 of the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.RecallDate2">
+            <summary>
+            Recall date 2 of the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Notes">
+            <summary>
+            Notes about the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Active">
+            <summary>
+            Indicates whether the patient is active or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowEmailReminders">
+            <summary>
+            Indicates whether the patient agrees to receive email reminders.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowEmailBirthday">
+            <summary>
+            Indicates whether the patient agrees to receive birthday greetings by email.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowEmailThankYou">
+            <summary>
+            Indicates whether the patient agrees to receive thank you messages by email.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowEmailEyeWear">
+            <summary>
+            Indicates whether the patient agrees to receive eyewear related messages by email.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowEmailPromotions">
+            <summary>
+            Indicates whether the patient agrees to receive promotional messages by email.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowSmsReminders">
+            <summary>
+            Indicates whether the patient agrees to receive SMS reminders.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowSmsBirthday">
+            <summary>
+            Indicates whether the patient agrees to receive birthday greetings by SMS.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowSmsThankYou">
+            <summary>
+            Indicates whether the patient agrees to receive thank you messages by SMS.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowSmsEyewear">
+            <summary>
+            Indicates whether the patient agrees to receive eyewear related messages by SMS.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowSmsPromotions">
+            <summary>
+            Indicates whether the patient agrees to receive promotional messages by SMS.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowVoiceReminders">
+            <summary>
+            Indicates whether the patient agrees to receive voice reminders.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowVoiceBirthday">
+            <summary>
+            Indicates whether the patient agrees to receive birthday greetings by voice.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowVoiceThankYou">
+            <summary>
+            Indicates whether the patient agrees to receive thank you messages by voice.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowVoiceEyewear">
+            <summary>
+            Indicates whether the patient agrees to receive eyewear related messages by voice.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.AllowVoicePromotions">
+            <summary>
+            Indicates whether the patient agrees to receive promotional calls.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.InvitedToPortal">
+            <summary>
+            Indicate whether the patient was invited to the web portal or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.LanguageName">
+            <summary>
+            Preferred language of the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Locations">
+            <summary>
+            Locations that the patient has visited (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Contact">
+            <summary>
+            Patient's contact information (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.PatientModel.Last4SSN">
+             <summary>
+            SSN last four digits.
+             </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Patients.RepresentativeModel">
+            <summary>
+            Model used to retrieve or set information about the patient representative.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.RepresentativeModel.Username">
+            <summary>
+            Username of the representative.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Patients.RepresentativeModel.Password">
+            <summary>
+            Password of the representative.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel">
+            <summary>
+            Model used to retrieve or set information about a patient update.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.PatientUpdateID">
+            <summary>
+            Unique ID of the model. ID belongs to the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.PatientExternalID">
+            <summary>
+            Patient's unique ID on integrating system.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowEmailTo">
+            <summary>
+            Indicates whether the patient agrees to receive email communications (in general) or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowEmailRemindersTo">
+            <summary>
+            Indicates whether the patient agrees to receive email reminders or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowEmailBirthdayTo">
+            <summary>
+            Indicates whether the patient agrees to receive birthday email communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowEmailThankYouTo">
+            <summary>
+            Indicates whether the patient agrees to receive thank you email communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowEmailEyewearTo">
+            <summary>
+            Indicates whether the patient agrees to receive eyewear email communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowEmailPromotionsTo">
+            <summary>
+            Indicates whether the patient agrees to receive email promotions or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowSmsTo">
+            <summary>
+            Indicates whether the patient agrees to receive text communications (in general) or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowSmsRemindersTo">
+            <summary>
+            Indicates whether the patient agrees to receive text reminders or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowSmsBirthdayTo">
+            <summary>
+            Indicates whether the patient agrees to receive birthday text communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowSmsThankYouTo">
+            <summary>
+            Indicates whether the patient agrees to receive thank you text communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowSmsEyewearTo">
+            <summary>
+            Indicates whether the patient agrees to receive eyewear text communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowSmsPromotionsTo">
+            <summary>
+            Indicates whether the patient agrees to receive text promotions or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowVoiceTo">
+            <summary>
+            Indicates whether the patient agrees to receive voice communications (in general) or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowVoiceRemindersTo">
+            <summary>
+            Indicates whether the patient agrees to receive voice reminders or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowVoiceBirthdayTo">
+            <summary>
+            Indicates whether the patient agrees to receive birthday voice communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowVoiceThankYouTo">
+            <summary>
+            Indicates whether the patient agrees to receive thank you voice communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowVoiceEyewearTo">
+            <summary>
+            Indicates whether the patient agrees to receive eyewear voice communications or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateAllowVoicePromotionsTo">
+            <summary>
+            Indicates whether the patient agrees to receive voice promotions or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.RecallContactLater">
+            <summary>
+            Indicates if the patient wants to be contacted later about a recall.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.ContactLensesContactLater">
+            <summary>
+            Indicates if the patient wants to be contacted later about buying contact lenses.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.Method">
+            <summary>
+            Indicates communication method.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateEmailAddressAliasTo">
+            <summary>
+            Indicates the new email address alias.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateEmailAddressTo">
+            <summary>
+            Indicates the new  email address.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateSmsPhoneAliasTo">
+            <summary>
+            Indicates the new  sms phone alias.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateSmsPhoneTo">
+            <summary>
+            Indicates the new  sms phone.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateVoicePhoneAliasTo">
+            <summary>
+            Indicates the new  voice phone alias.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PatientUpdates.PatientUpdateModel.UpdateVoicePhoneTo">
+            <summary>
+            Indicates the new  voice phone.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Doctors.DoctorModel">
+            <summary>
+             Model used to retrieve or set information about a doctor.
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Doctors.DoctorModel.LastName">
+            <summary>
+            Last name of the doctor (Required).  
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Doctors.DoctorModel.FirstName">
+            <summary>
+            First name of the doctor
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Doctors.DoctorModel.Alias">
+            <summary>
+            Alias of the doctor
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Doctors.DoctorModel.Active">
+            <summary>
+            Indicates whether the doctor is active or not (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Doctors.DoctorModel.InHouse">
+            <summary>
+            Indicates whether the doctor is in house or not (Required). 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Doctors.DoctorModel.LocationExternalId">
+            <summary>
+            Unique ID on integrating system of the default location of the doctor.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Doctors.DoctorModel.Locations">
+            <summary>
+            List of locations for the doctor.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel">
+            <summary>
+            Model used to retrieve or set information about a portal patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.ID">
+             <summary>
+            Unique ID of the model.Id belongs to the portal patient.
+             </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.DateOfBirth">
+            <summary>
+            Portal patient's date of birth.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.CreationDate">
+            <summary>
+            Portal patient's date of creation.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.LastEditionDate">
+            <summary>
+            Portal patient's last edition date.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.UserName">
+            <summary>
+            Portal patient's user name.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.Hash">
+            <summary>
+            Portal patient's password (Readonly).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.Status">
+            <summary>
+            Portal patient's status.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.Gender">
+            <summary>
+            Portal patient's gender.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.Guest">
+            <summary>
+            Indicates whether the patient is guest or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.Last4SSN">
+            <summary>
+            check Portal patient's last four social security number.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientModel.Contact">
+            <summary>
+            Model used to retrieve or set information about a contact (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.PortalPatients.PortalPatientUpdateModel">
+            <summary>
+            Model used to set information about a portal patient. 
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientUpdateModel.PatientID">
+            <summary>
+            Unique ID of the model. ID belongs to the patient.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.PortalPatients.PortalPatientUpdateModel.ExternalID">
+            <summary>
+            Patient's unique ID on integrating system (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Prefixes.PrefixModel">
+            <summary>
+            Model used to retrieve or set information about a prefixe.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Prefixes.PrefixModel.Name">
+            <summary>
+            Name of the prefixe (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.RecallReasons.RecallReasonModel">
+            <summary>
+            Model used to retrieve or set information about a recall reason.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.RecallReasons.RecallReasonModel.Name">
+            <summary>
+            Name of the recall reason.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Referrals.ReferralModel">
+            <summary>
+            Model used to retrieve or set information about a referral.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Referrals.ReferralModel.Name">
+            <summary>
+            Name of the referral.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Referrals.ReferralModel.IsDefault">
+            <summary>
+            Indicates whether the referral is default or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Referrals.ReferralModel.SortOrder">
+            <summary>
+            Sort order of the referral.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.ServicesTypeDuration.ServiceTypeDurationModel">
+            <summary>
+            Model used to retrieve or set information about a service type durationt.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ServicesTypeDuration.ServiceTypeDurationModel.PatientServiceTypeId">
+            <summary>
+            Patient service type id belongs to the patient service type table in the data base (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.ServicesTypeDuration.ServiceTypeDurationModel.Duration">
+            <summary>
+            check Service type duration in minutes.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.SocialHistoryAlcohols.SocialHistoryAlcoholModel">
+            <summary>
+            Model used to retrieve or set information about a social history alcohol.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SocialHistoryAlcohols.SocialHistoryAlcoholModel.Name">
+            <summary>
+            Name of the social history alcohol (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SocialHistoryAlcohols.SocialHistoryAlcoholModel.IsDefault">
+            <summary>
+            Indicates whether this social history alcohol is default or not (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SocialHistoryAlcohols.SocialHistoryAlcoholModel.SortOrder">
+            <summary>
+            Indicates the sort order of this social history alcohol in the list (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.SocialHistoryDrugs.SocialHistoryDrugModel">
+            <summary>
+            Model used to retrieve or set information about a social history drug.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SocialHistoryDrugs.SocialHistoryDrugModel.Name">
+            <summary>
+            Name of the social history drug (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SocialHistoryDrugs.SocialHistoryDrugModel.IsDefault">
+            <summary>
+            Indicates if this social history drug is the default or not (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SocialHistoryDrugs.SocialHistoryDrugModel.SortOrder">
+            <summary>
+            Indicates the sort order of this social history drug in the list (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Suffixes.SuffixModel">
+            <summary>
+            Model used to retrieve or set information about a location.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Suffixes.SuffixModel.Name">
+            <summary>
+            Name of the Suffix (Required).
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Surgeries.SurgeryModel">
+            <summary>
+            Model used to retrieve or set information about a surgery.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Surgeries.SurgeryModel.Name">
+            <summary>
+            Surgery's name (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Surgeries.SurgeryModel.SortOrder">
+            <summary>
+            Surgery's sort order.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.SynchronizationServiceFiles.SynchronizationServiceFileModel">
+            <summary>
+            Model used to retrieve or set information about an sync files.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationServiceFiles.SynchronizationServiceFileModel.Name">
+            <summary>
+            Name of file.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationServiceFiles.SynchronizationServiceFileModel.Version">
+            <summary>
+            File version.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationServiceFiles.SynchronizationServiceFileModel.Url">
+            <summary>
+            Download url of file.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationServiceFiles.SynchronizationServiceFileModel.MD5">
+            <summary>
+            MD5 of file used for comparison.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationServiceFiles.SynchronizationServiceFileModel.Created">
+            <summary>
+            Date file was uploaded.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.SynchronizationUsers.SynchronizationUserModel">
+            <summary>
+            This model is for internal use only.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationUsers.SynchronizationUserModel.Username">
+            <summary>
+            This property is for internal use only.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationUsers.SynchronizationUserModel.Password">
+            <summary>
+            This property is for internal use only.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.SynchronizationUsers.SynchronizationUserModel.AccountId">
+            <summary>
+            This property is for internal use only.
+            </summary>
+        </member>
+        <member name="T:GlobalPortal.Api.Models.Users.UserModel">
+            <summary>
+            Model used to retrieve or set information about an user.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.Username">
+            <summary>
+            User's username (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.Password">
+            <summary>
+            User's password (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.PasswordConfirmation">
+            <summary>
+            User's password (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.Active">
+            <summary>
+            Indicates whether the user is active or not.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.Notes">
+            <summary>
+            User's notes.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.UpDoxId">
+            <summary>
+            User's up dox ID.
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.Contact">
+            <summary>
+            User's contact information (Required).
+            </summary>
+        </member>
+        <member name="P:GlobalPortal.Api.Models.Users.UserModel.Locations">
+            <summary>
+            Locations to which the user has access.
+            </summary>
+        </member>
+    </members>
+</doc>

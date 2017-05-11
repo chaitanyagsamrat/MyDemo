@@ -1,0 +1,32 @@
+﻿@using GlobalPortal.Api.Demo.Views.Home
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.Home;
+}
+
+<div class="jumbotron">
+    <h1>@Resources.ApplicationName</h1>
+    <p class="lead">@IndexResources.SiteDescription</p>
+    <p>@Html.ActionLink(IndexResources.ListOfServices, "Services", "Home", new { @class = "btn btn-primary btn-lg" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@IndexResources.Documentation</h2>
+        <p>
+           @IndexResources.DocumentationDescription
+        </p>
+        <p><a class="btn btn-default" href="http://api.mveportal.com">@IndexResources.GoToDocumentation &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@IndexResources.DownloadDemo</h2>
+        <p>@IndexResources.DownloadDemoDescription</p>
+        <p><a class="btn btn-default" href="http://demo.api.mveportal.com/downloads/EyeReachPatientsApiDemo.zip">@IndexResources.StartDownload &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@IndexResources.DownloadHelperLibrary</h2>
+        <p>@IndexResources.DownloadHelperLibraryDescription</p>
+        <p><a class="btn btn-default" href="http://demo.api.mveportal.com/downloads/EyeReachPatientsApiClientLibrary.zip">@IndexResources.StartDownload &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,160 @@
+﻿@model GlobalPortal.Api.Demo.Models.MeaningfulUseModel
+
+@using GlobalPortal.Api.Models.MeaningfulUses
+@using GlobalPortal.Api.Demo.Models
+@using GlobalPortal.Api.Demo.Views.MeaningfulUses
+@using GlobalPortal.Api.Demo.Properties
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-1">
+                    <col class="col-xs-1">
+                    <col class="col-xs-1">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                    <col class="col-xs-1">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="font-size-13">@IndexResources.MeasureID</th>
+                        <th class="font-size-13">@IndexResources.Numerator</th>
+                        <th class="font-size-13">@IndexResources.Denominator</th>
+                        <th class="font-size-13">@IndexResources.Objective</th>
+                        <th class="font-size-13">@IndexResources.Threshold</th>
+                        <th class="font-size-13">@IndexResources.Passed</th>
+                        <th class="font-size-13">@IndexResources.NumeratorIDs</th>
+                        <th class="font-size-13">@IndexResources.Exclusions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults)
+                    {
+                        <tr>
+                            <td>@item.MeasureId</td>
+                            <td>@item.Numerator</td>
+                            <td>@item.Denominator</td>
+                            <td>@item.Objective</td>
+                            <td>@item.Threshold</td>
+                            <td>
+                                @(item.Passed == true ? IndexResources.Yes : IndexResources.No)
+                            </td>
+                            <td>@item.NumeratorIds.Count</td>
+                            <td>@item.Exclusions.Count</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@IndexResources.Measures</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "MeaningfulUses", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="Data_Measure" class="col-sm-3 control-label">@IndexResources.MeasureType</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("Data.Measure", null, new { @class = "form-control", id = "Data_Measure", @type = "number" , placeholder = @IndexResources.MeasureTypes })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_ReportingPeriodStart" class="col-sm-3 control-label">@IndexResources.ReportingPeriodStart</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("Data.ReportingPeriodStart", null, new { @class = "form-control", id = "Data_ReportingPeriodStart", @type = "date" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_ReportingPeriodEnd" class="col-sm-3 control-label">@IndexResources.ReportingPeriodEnd</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("Data.ReportingPeriodEnd", null, new { @class = "form-control", id = "Data_ReportingPeriodEnd", @type = "date" })
+                </div>
+            </div>
+            <br/>
+            <div class="form-group" style="margin-bottom:3px;">
+                <label class="col-sm-3 control-label">@IndexResources.Patients:</label>
+                <div class="col-sm-8 hidden-xs">
+                    <div class="form-group col-sm-5">
+                        <label for="Data_PatientExternalId1">@IndexResources.PatientId</label>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="form-group col-sm-5">
+                        <label for="Data_ExamDate1">@IndexResources.ExamDate</label>
+                     </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">@IndexResources.Patient1</label>
+                <div class="col-sm-8">
+                    <div class="form-group col-sm-5">
+                        <label for="Data_PatientExternalId1" class="visible-xs font-size-15">@IndexResources.PatientId</label>
+                       <input type="text" class="form-control" id="Data_PatientExternalId1" name="Data.Patients[0].ExternalId">
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="form-group col-sm-5">
+                        <label for="Data_ExamDate1" class="visible-xs font-size-15">@IndexResources.ExamDate</label>
+                       <input type="date" class="form-control" id="Data_ExamDate1" name="Data.Patients[0].ExamDate">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">@IndexResources.Patient2</label>
+                <div class="col-sm-8">
+                    <div class="form-group col-sm-5">
+                        <label for="Data_PatientExternalId1" class="visible-xs font-size-15">@IndexResources.PatientId</label>
+                       <input type="text" class="form-control" id="Data_PatientExternalId2" name="Data.Patients[1].ExternalId">
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="form-group col-sm-5">
+                        <label for="Data_ExamDate1" class="visible-xs font-size-15">@IndexResources.ExamDate</label>
+                        <input type="date" class="form-control" id="Data_ExamDate2" name="Data.Patients[1].ExamDate">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">@IndexResources.Patient3</label>
+                <div class="col-sm-8">
+                    <div class="form-group col-sm-5">
+                        <label for="Data_PatientExternalId1" class="visible-xs font-size-15">@IndexResources.PatientId</label>
+                       <input type="text" class="form-control" id="Data_PatientExternalId3" name="Data.Patients[2].ExternalId">
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="form-group col-sm-5">
+                        <label for="Data_ExamDate1" class="visible-xs font-size-15">@IndexResources.ExamDate</label>
+                        <input type="date" class="form-control" id="Data_ExamDate3" name="Data.Patients[2].ExamDate">
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary">@Resources.SendData</button>
+        }
+    </div>
+</div>
+
+
+
+
+
+

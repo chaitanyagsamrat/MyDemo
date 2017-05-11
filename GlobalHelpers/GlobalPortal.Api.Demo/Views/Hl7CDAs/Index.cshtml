@@ -1,0 +1,99 @@
+﻿@model GlobalPortal.Api.Demo.Models.GenericModel<Hl7CDAModel>
+
+@using GlobalPortal.Api.Models.Hl7CDAs
+@using GlobalPortal.Api.Demo.Properties
+@using GlobalPortal.Api.Demo.Views.Hl7CDAs
+
+@{
+    ViewBag.Title = IndexResources.PageTitle;
+}
+
+<h2>@IndexResources.MainHeader</h2>
+
+@if (Model.ResultMessage != string.Empty)
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ResultMessage</div>
+}
+@if (Model.ErrorMessage != string.Empty)
+{
+    <div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>@Model.ErrorMessage</div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.ResultsHeader</div>
+    <div class="panel-body">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+        {
+            <div class="row form-group">
+                <label for="resultPatientExternalId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultPatientExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultPatientExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLocationExternalId" class="col-sm-2 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBox("resultLocationExternalId", null, new { @class = "form-control", disabled = "disabled", id = "resultLocationExternalId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultCDAXml" class="col-sm-2 control-label">@IndexResources.CDAXml</label>
+                <div class="col-sm-8">
+                    @Html.TextArea("resultCDAXml", null, new { @class = "form-control", disabled = "disabled", id = "resultCDAXml" })
+                </div>
+            </div>
+        }
+        else
+        {
+                        <div class="row form-group">
+                <label for="resultPatientlId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultPatientlId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultLocationlId" class="col-sm-2 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control", disabled = "disabled", id = "resultLocationlId" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="resultCDAXml" class="col-sm-2 control-label">@IndexResources.CDAXml</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.CDAXml, null, new { @class = "form-control", disabled = "disabled", id = "resultCDAXml" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">@Resources.AddHeader</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Send", "Hl7CDAs", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="Data_PatientExternalId" class="col-sm-2 control-label">@IndexResources.PatientExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.PatientExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_LocationExternalId" class="col-sm-2 control-label">@IndexResources.LocationExternalId</label>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Data.LocationExternalId, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Data_CDAXml" class="col-sm-2 control-label">@IndexResources.CDAXml</label>
+                <div class="col-sm-8">
+                    @Html.TextAreaFor(m => m.Data.CDAXml, new { @class = "form-control" })
+                </div>
+            </div>
+            <button class="btn btn-primary">@Resources.SendData</button>
+        }
+    </div>
+</div>
+
+
+

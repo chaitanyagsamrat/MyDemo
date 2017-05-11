@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Temp\Publish\GlobalPortal.Api.Demo</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="bin/GlobalPortal.Api.Client.dll">
+      <publishTime>03/02/2017 14:51:42</publishTime>
+    </File>
+    <File Include="bin/GlobalPortal.Api.Demo.dll">
+      <publishTime>03/02/2017 14:51:46</publishTime>
+    </File>
+    <File Include="bin/GlobalPortal.Api.Models.dll">
+      <publishTime>03/02/2017 13:45:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/02/2017 13:45:31</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/29/2015 13:46:58</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>03/02/2017 13:45:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>03/02/2017 13:45:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>03/02/2017 13:45:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>03/02/2017 13:45:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>03/02/2017 13:45:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>03/02/2017 13:45:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>03/02/2017 13:45:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>03/02/2017 13:45:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>03/02/2017 13:45:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>03/02/2017 13:45:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>03/02/2017 13:45:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/02/2017 14:31:13</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/onemessages.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Accounts/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/AccountSettings/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Allergies/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/ApplyRequestResults/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/AppointmentAllowedTimeInAdvance/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/AppointmentCancelRequests/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/AppointmentRequestReasons/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/AppointmentRequestReasonsSent/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/AppointmentRequests/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Appointments/Index.cshtml">
+      <publishTime>03/02/2017 14:43:46</publishTime>
+    </File>
+    <File Include="Views/AppointmentStatuses/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/ClosedForms/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/CommunicationUpdatesAppointments/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/CommunicationUpdatesOrders/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/CommunicationUpdatesPatients/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/DoctorAvailabilitySlots/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Doctors/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/DosageForms/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/ExamFieldMappingDetails/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/ExamFieldMappings/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Exams/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/FamilyHistories/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/FamilyMembers/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/FamilyRelationships/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Forms/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/HealthReviews/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Hl7CDAs/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Home/Services.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/Insurances/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Locations/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/MarkAsReceived/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/MeaningfulUses/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Medications/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/OneOffMessages/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/OpenForms/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Orders/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/OrderStatus/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/PatientCommunications/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/PatientRelationships/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Patients/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/PortalPatients/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/PortalPatientUpdates/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Prefixes/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/RecallReasons/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Referrals/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/ServiceTypeDurations/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/SocialHistoryAlcohols/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/SocialHistoryDrugs/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Suffixes/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Surgeries/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Users/Index.cshtml">
+      <publishTime>03/02/2017 13:45:28</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>03/02/2017 13:45:27</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/02/2017 14:51:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.dll.config
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\Newtonsoft.Json.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\System.Net.Http.Formatting.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\Newtonsoft.Json.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\System.Net.Http.Formatting.xml
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.ClientAuthentication.RestClientAuthenticatorResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.GenericObject.ApiClientGenericObjectResources.resources
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.csproj.GenerateResource.Cache
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.dll
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.pdb
+C:\ERP\ApiHelpers\PreProduction\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.dll.config
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.pdb
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\Newtonsoft.Json.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\System.Net.Http.Formatting.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.pdb
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\Newtonsoft.Json.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\bin\Debug\System.Net.Http.Formatting.xml
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.ClientAuthentication.RestClientAuthenticatorResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.GenericObject.ApiClientGenericObjectResources.resources
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.csproj.GenerateResource.Cache
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.dll
+D:\MVE Stuff\New folder\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.dll.config
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Client.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\Newtonsoft.Json.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\System.Net.Http.Formatting.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.pdb
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\GlobalPortal.Api.Models.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\Newtonsoft.Json.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\bin\Debug\System.Net.Http.Formatting.xml
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.csprojResolveAssemblyReference.cache
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.ClientAuthentication.RestClientAuthenticatorResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.GenericObject.ApiClientGenericObjectResources.resources
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.csproj.GenerateResource.Cache
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.dll
+D:\MVE Stuff\GlobalHelpers\GlobalPortal.Api.Client\obj\Debug\GlobalPortal.Api.Client.pdb
